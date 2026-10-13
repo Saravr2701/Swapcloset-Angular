@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular';
-import {water} from "ionicons/icons";
+import {pulseOutline, personOutline, water, chatbubblesOutline, duplicateOutline, homeOutline} from "ionicons/icons";
 import {addIcons} from "ionicons";
 
 @Component({
@@ -10,6 +10,6 @@ import {addIcons} from "ionicons";
 })
 export class AppComponent {
   constructor() {
-    addIcons({ water });
+    addIcons({pulseOutline, personOutline, water, chatbubblesOutline, duplicateOutline, homeOutline });
   }
 }
