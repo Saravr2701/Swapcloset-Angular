@@ -1,9 +1,65 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
 :root {
+
+  --ion-font-family: 'Lato', system-ui, sans-serif;
+  --app-fuente-titulos: 'Poppins', var(--ion-font-family);
+
   --ion-background-color: #ffffff;
 
   --ion-text-color: #000000;
+
+  --ion-color-primary: #0b6e79;
+  --ion-color-primary-rgb: 11, 110, 121;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #0a616a;
+  --ion-color-primary-tint: #237d86;
+  --ion-color-secondary: #2a9d8f;
+  --ion-color-secondary-rgb: 42, 157, 143;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #258a7e;
+  --ion-color-secondary-tint: #3fa79a;
+  --ion-color-tertiary: #f2a65a;
+  --ion-color-tertiary-rgb: 242, 166, 90;
+  --ion-color-tertiary-contrast: #000000;
+  --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+  --ion-color-tertiary-shade: #d5924f;
+  --ion-color-tertiary-tint: #f3af6b;
+  --ion-color-success: #2f9e6b;
+  --ion-color-success-rgb: 47, 158, 107;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #298b5e;
+  --ion-color-success-tint: #44a87a;
+  --ion-color-warning: #d98a1a;
+  --ion-color-warning-rgb: 217, 138, 26;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #bf7917;
+  --ion-color-warning-tint: #dd9531;
+  --ion-color-danger: #d6534a;
+  --ion-color-danger-rgb: 214, 83, 74;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #bc4941;
+  --ion-color-danger-tint: #da635c;
+  --ion-color-medium: #6b7c86;
+  --ion-color-medium-rgb: 107, 124, 134;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #5e6d76;
+  --ion-color-medium-tint: #7a8992;
+
+
+  /* ── Variables propias de AquaPedia ─────────── */
+
+  --app-superficie: #ffffff; /* fondo de tarjetas y listas */
+  --app-borde: #e3e9e8; /* líneas finas */
+  --app-radio: 16px; /* redondeo de tarjetas */
+  --app-sombra: 0 1px 2px rgba(14, 34, 48, .05), 0 4px 14px rgba(14, 34, 48, .07);
+
 }
 
 /*

@@ -10,4 +10,16 @@
       <ion-title size="large">iniciotodo</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div class="rejilla">
+    @for (prenda of prendas; track prenda.id; let i = $index) {
+      <app-tarjetasprendas class="entrada" [style.--orden]="i" [prendas]="prenda" />
+    } @empty {
+      <app-estado-vacio class="todo-el-ancho" icono="search-outline" titulo="Sin resultados"
+                        texto="Prueba con otro nombre o quita los filtros.">
+        <ion-button fill="outline" (click)="limpiar()">Quitar filtros</ion-button>
+      </app-estado-vacio>
+    }
+  </div>
 </ion-content>
+
+

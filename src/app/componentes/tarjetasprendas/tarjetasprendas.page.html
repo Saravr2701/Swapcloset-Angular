@@ -1,0 +1,20 @@
+<ion-card [routerLink]="['/tabs/prenda', prenda().id]" [button]="true" class="tarjeta-prenda">
+  <div class="foto">
+    @if (!sinFoto) {
+      <img [src]="prenda().imagen || prenda().foto" [alt]="prenda().titulo" loading="lazy" (error)="sinFoto = true" />
+    } @else {
+      <div class="sin-foto-box">
+        <ion-icon name="shirt-outline"></ion-icon>
+      </div>
+    }
+
+    <span class="badge-intercambio">
+      {{ prenda().etiqueta || 'Intercambio' }}
+    </span>
+  </div>
+
+  <div class="cuerpo">
+    <h3 class="titulo">{{ prenda().titulo }}</h3>
+    <p class="subtitulo">{{ prenda().subtitulo }}</p>
+  </div>
+</ion-card>

@@ -57,4 +57,8 @@ export const routes: Routes = [
       },
     ]
   },
+  {
+    path: 'tarjetasprendas',
+    loadComponent: () => import('./componentes/tarjetasprendas/tarjetasprendas.page').then( m => m.TarjetasprendasPage)
+  },
 ];
