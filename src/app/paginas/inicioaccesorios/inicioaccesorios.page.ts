@@ -1,16 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
+import { IonContent } from '@ionic/angular';
+import {TarjetasprendasPage} from "../../componentes/tarjetasprendas/tarjetasprendas.page";
+import { HeaderPage } from '../../componentes/header/header.page';
 
 @Component({
-  selector: 'app-inicioaccesorios',
+  selector: 'app-iniciotodo',
   templateUrl: './inicioaccesorios.page.html',
   styleUrls: ['./inicioaccesorios.page.scss'],
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  standalone: true,
+  imports: [IonContent,CommonModule, FormsModule, TarjetasprendasPage, HeaderPage]
 })
 export class InicioaccesoriosPage implements OnInit {
 
+  prendas = [
+    {
+      id: 1,
+      titulo: 'Pendientes bañados oro',
+      subtitulo: 'Tous',
+      etiqueta: 'Intercambio',
+      imagen: './assets/pendientestous.png'
+    }
+  ];
+
+  limpiar() {
+    console.log('Limpiando filtros...');
+  }
   constructor() { }
 
   ngOnInit() {

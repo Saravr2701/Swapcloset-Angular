@@ -38,3 +38,16 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 /* @import '@ionic/angular/css/palettes/dark.system.css'; */
 
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&display=swap');
+
+:root {
+  --ion-font-family: 'Bodoni Moda', Georgia, serif;
+}
+html, body, ion-app, * {
+  font-family: var(--ion-font-family), serif;
+  font-weight: 200 !important;
+}
+
+ion-title, h1, h2, h3, h4 {
+  font-weight: 400 !important;
+}

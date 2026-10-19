@@ -1,19 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
+import {IonContent, IonHeader, IonTitle, IonToolbar} from '@ionic/angular';
+import { TarjetaschatsPage } from '../../componentes/tarjetaschats/tarjetaschats.page';
 
 @Component({
   selector: 'app-chats',
   templateUrl: './chats.page.html',
   styleUrls: ['./chats.page.scss'],
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  standalone: true,
+  imports: [IonContent, CommonModule, TarjetaschatsPage, IonHeader, IonTitle, IonToolbar]
 })
-export class ChatsPage implements OnInit {
+export class ChatsPage {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  chats = [
+    {
+      id: 1,
+      nombre: 'Jose Ignacio N.',
+      ultimoMensaje: 'Bizum de 1000€ o no apruebas la asignatura',
+      imagen: './assets/pendientestous.png',
+      sinLeer: true
+    },
+    {
+      id: 2,
+      nombre: 'Manuel R.',
+      ultimoMensaje: 'Okey, a las 5 estoy allí',
+      imagen: './assets/pendientestous.png',
+      sinLeer: false
+    },
+    {
+      id: 3,
+      nombre: 'Sofia L.',
+      ultimoMensaje: 'De nada, encantada!',
+      imagen: './assets/pendientestous.png',
+      sinLeer: false
+    }
+  ];
 
 }
+

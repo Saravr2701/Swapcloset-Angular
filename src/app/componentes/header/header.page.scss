@@ -1,0 +1,115 @@
+ion-toolbar {
+  --background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --padding-top: 6px;
+  --padding-bottom: 10px;
+}
+
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  ion-title {
+    padding: 0;
+    font-size: 26px;
+    text-align: left;
+  }
+
+  .saldo {
+    background-color: #e0e0e0;
+    color: #1a1a1a;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+/* Buscador */
+.busqueda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+
+  .search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: #e3e3e3;
+    border-radius: 20px;
+    padding: 8px 14px;
+
+    ion-icon {
+      font-size: 18px;
+      color: #555555;
+      margin-right: 8px;
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font-size: 14px;
+      color: #1a1a1a;
+
+      &::placeholder {
+        color: #777777;
+      }
+    }
+  }
+
+  .filter-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #e3e3e3;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    ion-icon {
+      font-size: 18px;
+      color: #333333;
+    }
+  }
+}
+
+/* Menú de Categorías */
+.categorias {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .categoria {
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    white-space: nowrap;
+    color: #222222;
+    background-color: #ffffff;
+    border: 1px solid #d0d0d0;
+    transition: all 0.2s ease;
+
+    /* Color naranja al seleccionar la pestaña */
+    &.activa {
+      background-color: #d97757;
+      color: #ffffff;
+      border-color: #d97757;
+    }
+  }
+}

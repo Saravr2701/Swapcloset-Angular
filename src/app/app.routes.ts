@@ -61,4 +61,12 @@ export const routes: Routes = [
     path: 'tarjetasprendas',
     loadComponent: () => import('./componentes/tarjetasprendas/tarjetasprendas.page').then( m => m.TarjetasprendasPage)
   },
+  {
+    path: 'header',
+    loadComponent: () => import('./componentes/header/header.page').then( m => m.HeaderPage)
+  },
+  {
+    path: 'tarjetaschats',
+    loadComponent: () => import('./componentes/tarjetaschats/tarjetaschats.page').then( m => m.TarjetaschatsPage)
+  },
 ];

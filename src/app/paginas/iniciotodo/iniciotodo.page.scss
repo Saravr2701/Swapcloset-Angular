@@ -1,4 +1,4 @@
-.badge-saldo {
+.saldo {
   background-color: #e0e0e0;
   color: #1a1a1a;
   padding: 6px 12px;
@@ -10,11 +10,21 @@
 
 .rejilla {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
-  gap: 16px; /* Espacio entre tarjetas */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
   padding-bottom: 20px;
 }
 
 .todo-el-ancho {
-  grid-column: 1 / -1; /* Ocupa las 2 columnas si no hay prendas */
+  grid-column: 1 / -1;
+}
+
+ion-title {
+  text-align: left;
+  padding-inline-start: 15px;
+}
+
+ion-header
+{
+  background-color: #ffffff;
 }

@@ -1,0 +1,25 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <div class="cabecera">
+      <h1>SwapCloset</h1>
+      <div slot="end" class="saldo">0.00€</div>
+    </div>
+
+    <div class="busqueda">
+      <div class="search-box">
+        <ion-icon name="search-outline"></ion-icon>
+        <input type="text" placeholder="Buscar" />
+      </div>
+      <button class="filter-btn" aria-label="Filtros">
+        <ion-icon name="options-outline"></ion-icon>
+      </button>
+    </div>
+
+    <div class="categorias">
+      <a routerLink="/tabs/iniciotodo" routerLinkActive="activa" class="categoria">Todo</a>
+      <a routerLink="/tabs/inicioformal" routerLinkActive="activa" class="categoria">Formal</a>
+      <a routerLink="/tabs/iniciocasual" routerLinkActive="activa" class="categoria">Casual</a>
+      <a routerLink="/tabs/inicioaccesorios" routerLinkActive="activa" class="categoria">Accesorios</a>
+    </div>
+  </ion-toolbar>
+</ion-header>

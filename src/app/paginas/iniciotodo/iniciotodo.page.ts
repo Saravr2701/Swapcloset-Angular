@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton } from '@ionic/angular';
+import { IonContent } from '@ionic/angular';
 import {TarjetasprendasPage} from "../../componentes/tarjetasprendas/tarjetasprendas.page";
+import { HeaderPage } from '../../componentes/header/header.page';
 
 @Component({
   selector: 'app-iniciotodo',
   templateUrl: './iniciotodo.page.html',
   styleUrls: ['./iniciotodo.page.scss'],
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, TarjetasprendasPage]
+  standalone: true,
+  imports: [IonContent,CommonModule, FormsModule, TarjetasprendasPage, HeaderPage]
 })
 export class IniciotodoPage implements OnInit {
 
@@ -18,31 +20,69 @@ export class IniciotodoPage implements OnInit {
       titulo: 'Pendientes bañados oro',
       subtitulo: 'Tous',
       etiqueta: 'Intercambio',
-      imagen: 'assets/pendientes.jpg'
+      imagen: './assets/pendientestous.png'
     },
     {
       id: 2,
       titulo: 'Chaqueta de cuero',
       subtitulo: 'M - Bershka',
       etiqueta: 'Intercambio',
-      imagen: 'assets/chaqueta.jpg'
+      imagen: './assets/chaquetaverde.png'
     },
     {
       id: 3,
       titulo: 'Pantalones capri rotos',
-      subtitulo: 'S - Zara',
+      subtitulo: '38 - H&M',
       etiqueta: 'Intercambio',
-      imagen: 'assets/pantalones.jpg'
+      imagen: './assets/caprisrotos.png'
     },
     {
       id: 4,
       titulo: 'Pack de 4 tops multicolor',
-      subtitulo: 'M - Stradivarius',
+      subtitulo: 'S - Shein',
       etiqueta: 'Intercambio',
-      imagen: 'assets/tops.jpg'
+      imagen: './assets/packtops.png'
+    },
+    {
+      id: 5,
+      titulo: 'Vaqueros skinny básicos',
+      subtitulo: '40 -Levis',
+      etiqueta: 'Intercambio',
+      imagen: './assets/vaqueroslevis.png'
+    },
+    {
+      id: 6,
+      titulo: 'Chaleco formal',
+      subtitulo: 'S - Zara',
+      etiqueta: 'Intercambio',
+      imagen: './assets/chalecozara.png'
+    },
+    {
+      id: 7,
+      titulo: 'Gabardina gris a cuadros',
+      subtitulo: 'M - Stradivarius',
+      etiqueta: 'Préstamo',
+      imagen: './assets/gabardinagris.png'
+    },
+    {
+      id: 8,
+      titulo: 'Conjunto sofisticado',
+      subtitulo: 'L - Zara',
+      etiqueta: 'Préstamo',
+      imagen: './assets/conjuntosofisticado.png'
+    },
+    {
+      id: 9,
+      titulo: 'Conjunto top y short',
+      subtitulo: 'L - Mango',
+      etiqueta: 'Préstamo',
+      imagen: './assets/conjunto.png'
     }
   ];
 
+  limpiar() {
+    console.log('Limpiando filtros...');
+  }
   constructor() { }
 
   ngOnInit() {

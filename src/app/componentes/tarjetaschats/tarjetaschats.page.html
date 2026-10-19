@@ -1,0 +1,20 @@
+<div class="tarjeta-chat">
+
+  <img
+    [src]="chat.imagen"
+    [alt]="chat.nombre"
+    class="foto-chat"
+  >
+
+  <div class="informacion-chat">
+    <div class="fila-nombre">
+      <h3>{{ chat.nombre }}</h3>
+      @if (chat.sinLeer) {
+        <span class="punto-azul"></span>
+      }
+    </div>
+    <p [class.mensaje-no-leido]="chat.sinLeer">
+      {{ chat.ultimoMensaje }}
+    </p>
+  </div>
+</div>

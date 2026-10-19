@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="false" class="cabecera-mensajes">
   <ion-toolbar>
-    <ion-title>Chats</ion-title>
+    <div class="cabecera-contenido">
+      <h1>Mensajes</h1>
+      <div class="buscador">
+        Busca una conversacion
+      </div>
+      <div class="separador"></div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Chats</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="contenido-chats">
+  <div class="lista-chats">
+    @for (chat of chats; track chat.id) {
+      <app-tarjetaschats [chat]="chat" />
+    }
+  </div>
 </ion-content>
