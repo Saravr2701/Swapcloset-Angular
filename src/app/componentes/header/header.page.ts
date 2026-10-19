@@ -1,7 +1,7 @@
-import { Component, input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { IonHeader, IonToolbar, IonTitle, IonIcon } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonIcon } from '@ionic/angular';
 import { searchOutline, optionsOutline } from 'ionicons/icons';
 import {addIcons} from "ionicons";
 
@@ -10,7 +10,7 @@ import {addIcons} from "ionicons";
   templateUrl: './header.page.html',
   styleUrls: ['./header.page.scss'],
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, IonHeader, IonToolbar, IonTitle, IonIcon]
+  imports: [CommonModule, RouterLink, RouterLinkActive, IonHeader, IonToolbar, IonIcon]
 })
 export class HeaderPage implements OnInit {
 

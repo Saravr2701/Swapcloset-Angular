@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {IonContent, IonHeader, IonTitle, IonToolbar} from '@ionic/angular';
+import {IonContent, IonHeader, IonToolbar} from '@ionic/angular';
 import { TarjetaschatsPage } from '../../componentes/tarjetaschats/tarjetaschats.page';
 
 @Component({
@@ -8,7 +8,7 @@ import { TarjetaschatsPage } from '../../componentes/tarjetaschats/tarjetaschats
   templateUrl: './chats.page.html',
   styleUrls: ['./chats.page.scss'],
   standalone: true,
-  imports: [IonContent, CommonModule, TarjetaschatsPage, IonHeader, IonTitle, IonToolbar]
+  imports: [IonContent, CommonModule, TarjetaschatsPage, IonHeader, IonToolbar]
 })
 export class ChatsPage {
 
