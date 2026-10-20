@@ -1,18 +1,98 @@
-<ion-header [translucent]="false">
+
+<ion-header [translucent]="false" class="cabecera-perfil">
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+    <div class="cabecera">
+      <h1>Tu perfil</h1>
+      <div class="iconos-cabecera">
+        <ion-button fill="clear" routerLink="/tabs/ajustes">
+          <ion-icon name="settings-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button fill="clear" routerLink="/tabs/recordatorios">
+          <ion-icon name="notifications-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="contenido-perfil">
+
+  <div class="perfil">
+    <div class="informacion-usuario">
+
+      <img
+        [src]="datosPerfil.imagen"
+        [alt]="datosPerfil.nombre"
+        class="foto-perfil"
+      >
+
+      <h2>{{ datosPerfil.nombre }}</h2>
+
+      <div class="ubicacion">
+        <ion-icon name="location-outline"></ion-icon>
+        <span>{{ datosPerfil.ubicacion }}</span>
+      </div>
+
+      <div class="valoracion">
+        <ion-icon name="star"></ion-icon>
+        <span>{{ datosPerfil.valoracion }}</span>
+        <span class="resenas">
+          ({{ datosPerfil.resenas }} reseñas)
+        </span>
+      </div>
+    </div>
+
+    <div class="detalles-perfil">
+      <div class="estilos">
+        <h3>Estilos favoritos</h3>
+
+        <div class="lista-estilos">
+          @for (estilo of datosPerfil.estilosFavoritos; track estilo) {
+            <span>{{ estilo }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="tallas">
+        <h3>Tallas</h3>
+
+        <div class="caja-tallas">
+          @for (talla of datosPerfil.tallas; track talla) {
+            <p>{{ talla }}</p>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="seccion-tusprendas">
+
+      <h3>Tus prendas</h3>
+
+      <div class="rejilla-prendas">
+        @for (prenda of tusPrendas; track prenda.id) {
+          <app-tarjetasperfil [prenda]="prenda" />
+        }
+      </div>
+    </div>
+
+
+    <div class="seccion-tusintercambios">
+
+      <h3>Tus intercambios</h3>
+
+      <div class="lista-intercambios">
+
+        @for (intercambio of tusIntercambios; track intercambio.id) {
+          <app-tarjetastusintercambios
+            [intercambio]="intercambio"
+          />
+        }
+
+      </div>
+    </div>
+
+
+  </div>
+
 </ion-content>
-
-<ion-button color="danger" fill="outline" expand="block" routerLink="/login" routerDirection="root">
-  Cerrar sesión
-</ion-button>
-

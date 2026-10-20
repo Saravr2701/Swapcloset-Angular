@@ -1,19 +1,52 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
+import {IonButton, IonContent, IonHeader, IonIcon, IonToolbar} from '@ionic/angular';
+import { imageOutline } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-anadirprendas',
   templateUrl: './anadirprendas.page.html',
   styleUrls: ['./anadirprendas.page.scss'],
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonToolbar,
+    CommonModule,
+    FormsModule,
+    IonButton,
+    RouterLink
+  ]
 })
 export class AnadirprendasPage implements OnInit {
 
-  constructor() { }
+  tiposSeleccionados: string[] = [];
+
+  constructor() {
+    addIcons({ imageOutline });
+  }
 
   ngOnInit() {
+  }
+
+  seleccionarTipo(tipo: string) {
+
+    if (this.tiposSeleccionados.includes(tipo)) {
+
+      this.tiposSeleccionados = this.tiposSeleccionados.filter(
+        t => t !== tipo
+      );
+
+    } else {
+
+      this.tiposSeleccionados.push(tipo);
+
+    }
+
   }
 
 }

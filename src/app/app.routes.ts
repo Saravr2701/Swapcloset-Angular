@@ -12,7 +12,7 @@ export const routes: Routes = [
   },
   {
     path: 'tabs',
-    loadComponent: () => import('./paginas/barranav/barranav.page').then((m) => m.BarranavPage),
+    loadComponent: () => import('./componentes/barranav/barranav.page').then((m) => m.BarranavPage),
     children: [
       {
         path: '',
@@ -53,7 +53,27 @@ export const routes: Routes = [
       },
       {
         path: 'barranav',
-        loadComponent: () => import('./paginas/barranav/barranav.page').then( m => m.BarranavPage)
+        loadComponent: () => import('./componentes/barranav/barranav.page').then(m => m.BarranavPage)
+      },
+      {
+        path: 'ajustes',
+        loadComponent: () => import('./paginas/ajustes/ajustes.page').then( m => m.AjustesPage)
+      },
+      {
+        path: 'recordatorios',
+        loadComponent: () => import('./paginas/recordatorios/recordatorios.page').then( m => m.RecordatoriosPage)
+      },
+      {
+        path: 'iniciocalzado',
+        loadComponent: () => import('./paginas/iniciocalzado/iniciocalzado.page').then( m => m.IniciocalzadoPage)
+      },
+      {
+        path: 'iniciodeportivo',
+        loadComponent: () => import('./paginas/iniciodeportivo/iniciodeportivo.page').then( m => m.IniciodeportivoPage)
+      },
+      {
+        path: 'publicado',
+        loadComponent: () => import('./paginas/publicado/publicado.page').then( m => m.PublicadoPage)
       },
     ]
   },
@@ -68,5 +88,17 @@ export const routes: Routes = [
   {
     path: 'tarjetaschats',
     loadComponent: () => import('./componentes/tarjetaschats/tarjetaschats.page').then( m => m.TarjetaschatsPage)
+  },
+  {
+    path: 'tarjetastusprendas',
+    loadComponent: () => import('./componentes/tarjetastusprendas/tarjetastusprendas.page').then( m => m.TarjetastusprendasPage)
+  },
+  {
+    path: 'tarjetastusintercambios',
+    loadComponent: () => import('./componentes/tarjetastusintercambios/tarjetastusintercambios.page').then( m => m.TarjetastusintercambiosPage)
+  },
+  {
+    path: 'tarjetastusprestamos',
+    loadComponent: () => import('./componentes/tarjetastusprestamos/tarjetastusprestamos.page').then( m => m.TarjetastusprestamosPage)
   },
 ];

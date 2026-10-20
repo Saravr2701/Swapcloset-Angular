@@ -1,11 +1,214 @@
-<ion-content class="ion-padding">
-  <div class="centrado">
-    <h1>SwapCloset</h1>
-    <p>Inicia sesión para continuar</p>
-    <ion-input label="Correo electrónico" labelPlacement="floating" type="email"></ion-input>
-    <ion-input label="Contraseña" labelPlacement="floating" type="password"></ion-input>
-    <ion-button expand="block" routerLink="/tabs/iniciotodo" routerDirection="root">
-      Entrar
-    </ion-button>
+
+<ion-content [fullscreen]="true" class="pagina-acceso">
+
+  <div class="contenedor-acceso">
+
+    <!-- PANTALLA 1: BIENVENIDA -->
+    @if (pantalla === 'bienvenida') {
+
+      <div class="pantalla bienvenida">
+
+        <h1>SwapCloset</h1>
+
+        <p class="texto-bienvenida">
+          Bienvenido a SwapCloset, la app definitiva
+          de intercambio y venta de ropa.
+          <br>
+          Para ver los detalles de los artículos,
+          publicar anuncios y más inicia sesión o regístrate.
+        </p>
+
+        <div class="botones-bienvenida">
+
+          <button
+            type="button"
+            (click)="cambiarPantalla('iniciosesion')">
+            Iniciar sesión
+          </button>
+
+          <button
+            type="button"
+            (click)="cambiarPantalla('registro')">
+            Registrarse
+          </button>
+
+          <button
+            type="button"
+            routerLink="/tabs/iniciotodo">
+            Modo invitado
+          </button>
+
+        </div>
+
+      </div>
+    }
+
+    <!-- PANTALLA 2: INICIAR SESIÓN -->
+    @if (pantalla === 'iniciosesion') {
+
+      <div class="pantalla">
+
+        <h1>SwapCloset</h1>
+
+        <div class="subtitulo">
+          <h2>¡Hola de nuevo!</h2>
+          <p>Iniciar sesión</p>
+        </div>
+
+        <div class="formulario">
+
+          <div class="campo">
+            <label for="correo-login">
+              Correo electrónico
+            </label>
+            <input
+              id="correo-login"
+              type="email"
+              autocomplete="email">
+          </div>
+
+          <div class="campo">
+            <label for="contrasena-login">
+              Contraseña
+            </label>
+            <input
+              id="contrasena-login"
+              type="password"
+              autocomplete="current-password">
+          </div>
+
+          <button
+            type="button"
+            class="boton-continuar"
+            routerLink="/tabs/iniciotodo">
+            Continuar
+          </button>
+
+        </div>
+
+        <div class="separador">
+          <span>o</span>
+        </div>
+
+        <div class="acceso-social">
+
+          <button type="button" class="boton-apple" routerLink="/tabs/iniciotodo">
+            <ion-icon name="logo-apple"></ion-icon>
+            Iniciar sesión con Apple ID
+          </button>
+
+          <button type="button" class="boton-google" routerLink="/tabs/iniciotodo">
+            <span class="logo-google">G</span>
+            Iniciar sesión con Google
+          </button>
+
+        </div>
+
+        <button
+          type="button"
+          class="enlace-cuenta"
+          (click)="cambiarPantalla('registro')">
+          ¿No tienes una cuenta? Créala
+        </button>
+
+        <button
+          type="button"
+          class="enlace-volver"
+          (click)="cambiarPantalla('bienvenida')">
+          Volver
+        </button>
+
+      </div>
+    }
+
+    <!-- PANTALLA 3: REGISTRO -->
+    @if (pantalla === 'registro') {
+
+      <div class="pantalla">
+
+        <h1>SwapCloset</h1>
+
+        <div class="subtitulo">
+          <h2>¡Bienvenido!</h2>
+          <p>Registro</p>
+        </div>
+
+        <div class="formulario">
+
+          <div class="campo">
+            <label for="nombre-registro">
+              Nombre completo
+            </label>
+            <input
+              id="nombre-registro"
+              type="text"
+              autocomplete="name">
+          </div>
+
+          <div class="campo">
+            <label for="correo-registro">
+              Correo electrónico
+            </label>
+            <input
+              id="correo-registro"
+              type="email"
+              autocomplete="email">
+          </div>
+
+          <div class="campo">
+            <label for="contrasena-registro">
+              Contraseña
+            </label>
+            <input
+              id="contrasena-registro"
+              type="password"
+              autocomplete="new-password">
+          </div>
+
+          <button
+            type="button"
+            class="boton-continuar"
+            routerLink="/tabs/iniciotodo">
+            Continuar
+          </button>
+
+        </div>
+
+        <div class="separador">
+          <span>o</span>
+        </div>
+
+        <div class="acceso-social">
+
+          <button type="button" class="boton-apple" routerLink="/tabs/iniciotodo">
+            <ion-icon name="logo-apple"></ion-icon>
+            Regístrate con Apple ID
+          </button>
+
+          <button type="button" class="boton-google" routerLink="/tabs/iniciotodo">
+            <span class="logo-google">G</span>
+            Regístrate con Google
+          </button>
+
+        </div>
+
+        <button
+          type="button"
+          class="enlace-cuenta"
+          (click)="cambiarPantalla('iniciosesion')">
+          ¿Ya tienes una cuenta? Inicia sesión
+        </button>
+
+        <button
+          type="button"
+          class="enlace-volver"
+          (click)="cambiarPantalla('bienvenida')">
+          Volver
+        </button>
+
+      </div>
+    }
+
   </div>
+
 </ion-content>

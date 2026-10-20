@@ -1,13 +1,127 @@
-<ion-header [translucent]="true">
+
+<ion-header [translucent]="false" class="cabecera-anadir">
   <ion-toolbar>
-    <ion-title>anadirprendas</ion-title>
+    <h1>Añade una prenda</h1>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">anadirprendas</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="contenido-anadir">
+
+  <div class="formulario-prenda">
+
+    <!-- FOTO -->
+    <label class="zona-foto" for="foto-prenda">
+
+      <div class="contenido-foto">
+
+        <div class="circulo-camara">
+          <ion-icon name="image-outline"></ion-icon>
+        </div>
+
+        <p>Pulsa para añadir una foto</p>
+        <span>
+          Muestra la parte delantera, trasera, detalles, etc.
+        </span>
+
+      </div>
+
+    </label>
+
+    <!-- NOMBRE -->
+    <div class="campo campo-nombre">
+      <label for="nombre">Nombre del artículo</label>
+      <input
+        id="nombre"
+        type="text"
+        placeholder="Ej: Pantalón vaquero de campana"
+      >
+    </div>
+
+    <!-- TALLA, CATEGORÍA Y TIENDA -->
+    <div class="campos-fila">
+
+      <div class="campo">
+        <label for="talla">Talla</label>
+        <select id="talla">
+          <option value="" selected disabled>Selecciona...</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="categoria">Categoría</label>
+        <select id="categoria">
+          <option value="" selected disabled>Selecciona...</option>
+          <option value="camisetas">Camisetas</option>
+          <option value="pantalones">Pantalones</option>
+          <option value="vestidos">Vestidos</option>
+          <option value="accesorios">Accesorios</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="tienda">Tienda</label>
+        <select id="tienda">
+          <option value="" selected disabled>Selecciona...</option>
+          <option value="zara">Zara</option>
+          <option value="bershka">Bershka</option>
+          <option value="hm">H&M</option>
+          <option value="shein">Shein</option>
+          <option value="otra">Otra</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- TIPO DE ANUNCIO -->
+    <div class="tipo-anuncio">
+
+      <label>Tipo de anuncio</label>
+
+
+      <div class="opciones-anuncio">
+
+        <button
+          type="button"
+          [class.activo]="tiposSeleccionados.includes('prestamo')"
+          [attr.aria-pressed]="tiposSeleccionados.includes('prestamo')"
+          (click)="seleccionarTipo('prestamo')">
+          Préstamo
+        </button>
+
+        <button
+          type="button"
+          [class.activo]="tiposSeleccionados.includes('intercambio')"
+          [attr.aria-pressed]="tiposSeleccionados.includes('intercambio')"
+          (click)="seleccionarTipo('intercambio')">
+          Intercambio
+        </button>
+
+      </div>
+
+
+    </div>
+
+    <!-- DESCRIPCIÓN -->
+    <div class="campo campo-descripcion">
+      <label for="descripcion">Descripción del producto</label>
+      <input
+        id="descripcion"
+        type="text"
+        placeholder="Describe la prenda, su estado, usos aproximados..."
+      >
+    </div>
+
+    <!-- PUBLICAR -->
+    <div class="contenedor-publicar">
+      <button type="button" class="boton-publicar" routerLink="/tabs/publicado">
+        Publicar
+      </button>
+    </div>
+  </div>
+
 </ion-content>

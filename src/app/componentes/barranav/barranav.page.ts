@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { addIcons } from 'ionicons';
+import { arrowBackOutline, personOutline } from 'ionicons/icons';
+import { Router } from '@angular/router';
 import { IonTabBar, IonTabs, IonTabButton, IonIcon, IonLabel } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-barranav',
@@ -11,7 +15,11 @@ import { IonTabBar, IonTabs, IonTabButton, IonIcon, IonLabel } from '@ionic/angu
 })
 export class BarranavPage implements OnInit {
 
-  constructor() { }
+  readonly router = inject(Router);
+
+  constructor() {
+    addIcons({ arrowBackOutline, personOutline });
+  }
 
   ngOnInit() {
   }

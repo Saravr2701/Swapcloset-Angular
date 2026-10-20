@@ -1,3 +1,4 @@
+
 ion-toolbar {
   --background: #ffffff;
   border-bottom: 1px solid #e0e0e0;
@@ -29,7 +30,6 @@ ion-toolbar {
   }
 }
 
-/* Buscador */
 .busqueda {
   display: flex;
   align-items: center;
@@ -82,7 +82,79 @@ ion-toolbar {
   }
 }
 
-/* Menú de Categorías */
+.panel-filtros {
+  background-color: #dedede;
+  border-radius: 8px;
+  padding: 7px 10px;
+  margin-bottom: 12px;
+  font-family: Arial, sans-serif;
+
+  p {
+    margin: 0 0 5px;
+    font-size: 11px;
+    color: #111111;
+  }
+}
+
+.opciones-filtros {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 0;
+}
+
+.columna-filtros {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    line-height: 14px;
+    color: #111111;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    padding: 0;
+
+    border: 1px solid #777777;
+    border-radius: 0;
+    background: transparent;
+
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+
+    &:checked {
+      background-color: #d97757;
+      border-color: #d97757;
+    }
+
+    &:checked::after {
+      content: "✓";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+    }
+  }
+}
+
 .categorias {
   display: flex;
   gap: 8px;
@@ -105,7 +177,6 @@ ion-toolbar {
     border: 1px solid #d0d0d0;
     transition: all 0.2s ease;
 
-    /* Color naranja al seleccionar la pestaña */
     &.activa {
       background-color: #d97757;
       color: #ffffff;

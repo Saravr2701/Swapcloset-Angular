@@ -18,26 +18,19 @@ export class IniciocasualPage implements OnInit {
     {
       id: 1,
       titulo: 'Vaqueros skinny básicos',
-      subtitulo: '40 -Levis',
+      subtitulo: '40 - Levis',
       etiqueta: 'Intercambio',
       imagen: './assets/vaqueroslevis.png'
     },
     {
       id: 2,
-      titulo: 'Pack de 4 tops multicolor',
-      subtitulo: 'S - Shein',
-      etiqueta: 'Intercambio',
-      imagen: './assets/packtops.png'
-    },
-    {
-      id: 3,
       titulo: 'Conjunto top y short',
       subtitulo: 'L - Mango',
       etiqueta: 'Préstamo',
       imagen: './assets/conjunto.png'
     },
     {
-      id: 4,
+      id: 3,
       titulo: 'Pantalones capri rotos',
       subtitulo: '38 - H&M',
       etiqueta: 'Intercambio',

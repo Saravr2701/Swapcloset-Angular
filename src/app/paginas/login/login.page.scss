@@ -1,7 +1,226 @@
-.centrado {
-  height: 100%;
+
+.pagina-acceso {
+  --background: #ffffff;
+  --color: #111111;
+}
+
+.contenedor-acceso {
+  width: 100%;
+  min-height: 100%;
+  padding: clamp(80px, 12vh, 130px) 16px 40px;
+  box-sizing: border-box;
+}
+
+.pantalla {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
   text-align: center;
+
+  h1 {
+    font-size: 26px;
+    font-weight: 400;
+    color: #111111;
+    margin: 0 0 22px;
+  }
+}
+
+/* BIENVENIDA */
+.texto-bienvenida {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #111111;
+  margin: 0 0 28px;
+}
+
+.botones-bienvenida {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+
+  button {
+    width: 150px;
+    height: 32px;
+    background-color: #dedede;
+    color: #111111;
+    border: none;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+}
+
+/* TÍTULOS DE INICIO DE SESIÓN Y REGISTRO */
+.subtitulo {
+  margin-bottom: 25px;
+
+  h2 {
+    font-size: 19px;
+    font-weight: 400;
+    margin: 0;
+    color: #111111;
+  }
+
+  p {
+    font-size: 17px;
+    margin: 0;
+    color: #111111;
+  }
+}
+
+/* FORMULARIO */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 78%;
+  max-width: 290px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 4px;
+
+  label {
+    font-size: 12px;
+    color: #111111;
+  }
+
+  input {
+    width: 100%;
+    height: 34px;
+    padding: 0 12px;
+    background-color: #dedede;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 13px;
+    color: #111111;
+
+    &:focus {
+      outline: 1px solid #d97757;
+    }
+  }
+}
+
+/* BOTÓN CONTINUAR */
+.boton-continuar {
+  align-self: center;
+  background-color: #dedede;
+  color: #111111;
+  border: none;
+  border-radius: 25px;
+  padding: 7px 20px;
+  margin-top: 14px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* SEPARADOR CON LA LETRA O */
+.separador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: 20px 0 14px;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #cccccc;
+  }
+
+  span {
+    color: #111111;
+    font-size: 13px;
+  }
+}
+
+/* ACCESO CON APPLE Y GOOGLE */
+.acceso-social {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  align-items: center;
+}
+
+.boton-apple,
+.boton-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 220px;
+  height: 32px;
+  border-radius: 25px;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: default;
+  opacity: 1;
+}
+
+.boton-apple {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+
+  ion-icon {
+    font-size: 19px;
+  }
+}
+
+.boton-google {
+  background-color: #ffffff;
+  color: #111111;
+  border: 1px solid #dddddd;
+}
+
+.logo-google {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(
+    45deg,
+    #4285f4 30%,
+    #34a853 45%,
+    #fbbc05 65%,
+    #ea4335 80%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ENLACES INFERIORES */
+.enlace-cuenta,
+.enlace-volver {
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: #888888;
+  cursor: pointer;
+}
+
+.enlace-cuenta {
+  margin-top: 28px;
+  font-size: 11px;
+  text-decoration: underline;
+}
+
+.enlace-volver {
+  margin-top: 15px;
+  font-size: 11px;
 }

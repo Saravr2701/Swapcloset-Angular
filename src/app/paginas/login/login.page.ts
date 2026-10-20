@@ -1,20 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IonContent,IonInput, IonButton, IonRouterLink } from '@ionic/angular';
+
+import {
+  IonContent,
+  IonIcon
+} from '@ionic/angular';
+
+import { addIcons } from 'ionicons';
+import { logoApple } from 'ionicons/icons';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  imports: [IonContent,CommonModule, FormsModule, IonInput, IonButton, IonRouterLink, RouterLink]
+  standalone: true,
+  imports: [
+    IonContent,
+    IonIcon,
+    RouterLink
+  ]
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
 
-  constructor() { }
+  pantalla: 'bienvenida' | 'iniciosesion' | 'registro' = 'bienvenida';
 
-  ngOnInit() {
+  constructor() {
+    addIcons({ logoApple });
+  }
+
+  cambiarPantalla(
+    nuevaPantalla: 'bienvenida' | 'iniciosesion' | 'registro'
+  ) {
+    this.pantalla = nuevaPantalla;
   }
 
 }

@@ -3,42 +3,44 @@
 
   ion-toolbar {
     --background: #ffffff;
-    --border-width: 0;
-    --padding-start: 0;
-    --padding-end: 0;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --padding-top: 6px;
+    --padding-bottom: 10px;
   }
 }
 
-.cabecera-contenido {
-  padding: 10px 28px 0;
-
-  h1 {
-    font-family: Georgia, serif;
-    font-size: 26px;
-    font-weight: 400;
-    color: #111111;
-    margin: 4px 0 12px;
-  }
-}
-
-.buscador {
+.busqueda {
   display: flex;
-  align-items: center;
-  width: 100%;
-  height: 32px;
-  background: #dedede;
-  border-radius: 25px;
-  padding: 0 12px;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  color: #777777;
-  box-sizing: border-box;
-}
+  margin-bottom: 12px;
 
-.separador {
-  height: 1px;
-  background: #bcbcbc;
-  margin-top: 8px;
+  .search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: #e3e3e3;
+    border-radius: 20px;
+    padding: 8px 10px;
+
+    ion-icon {
+      font-size: 18px;
+      color: #555555;
+      margin-right: 8px;
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font-size: 14px;
+      color: #1a1a1a;
+
+      &::placeholder {
+        color: #777777;
+      }
+    }
+  }
 }
 
 .contenido-chats {
