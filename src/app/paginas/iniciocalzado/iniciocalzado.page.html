@@ -1,0 +1,11 @@
+<app-header/>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div class="rejilla">
+    @for (zapato of zapatos; track zapato.id;) {
+      <app-tarjetasprendas [prenda]="zapato" />
+    }
+  </div>
+
+</ion-content>

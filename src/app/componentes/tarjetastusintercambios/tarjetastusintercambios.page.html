@@ -1,0 +1,40 @@
+
+<div class="tarjeta-intercambio">
+
+  <div class="prendas-intercambio">
+
+    <div class="prenda-intercambio">
+      <img
+        [src]="intercambio.imagenEntregada"
+        alt="Prenda entregada"
+      >
+      <p>Fecha inicio: {{ intercambio.fechaInicio }}</p>
+    </div>
+
+    <ion-icon
+      name="swap-horizontal-outline"
+      class="icono-intercambio">
+    </ion-icon>
+
+    <div class="prenda-intercambio">
+      <img
+        [src]="intercambio.imagenRecibida"
+        alt="Prenda recibida"
+      >
+      <p>Fecha fin: {{ intercambio.fechaFin }}</p>
+    </div>
+
+  </div>
+
+  <button
+    type="button"
+    class="recordatorio"
+    (click)="anadirRecordatorio()">
+
+    <ion-icon name="mail-unread-outline"></ion-icon>
+    <span>Añadir recordatorio</span>
+
+  </button>
+
+</div>
+

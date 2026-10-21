@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {IonButton, IonContent, IonHeader, IonIcon, IonToolbar} from '@ionic/angular';
+import {IonContent, IonHeader, IonIcon, IonToolbar} from '@ionic/angular';
 import { imageOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import {RouterLink} from "@angular/router";
@@ -18,7 +18,6 @@ import {RouterLink} from "@angular/router";
     IonToolbar,
     CommonModule,
     FormsModule,
-    IonButton,
     RouterLink
   ]
 })

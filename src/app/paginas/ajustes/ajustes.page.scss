@@ -1,0 +1,21 @@
+
+.cabecera-ajustes {
+  box-shadow: none;
+
+  ion-toolbar {
+    --border-width: 0px;
+    --background: #ffffff;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --padding-top: 6px;
+    --padding-bottom: 10px;
+  }
+}
+
+.contenido-ajustes {
+  --background: #ffffff;
+}
+
+.contenedor-ajustes {
+  padding: 20px 12px;
+}

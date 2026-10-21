@@ -1,0 +1,21 @@
+
+<div class="tarjeta-perfil">
+
+  <img
+    [src]="prenda.imagen"
+    [alt]="prenda.nombre"
+    class="imagen-prenda"
+  >
+
+  <span class="etiqueta">
+    {{ prenda.tipo }}
+  </span>
+
+  @if (!prenda.disponible) {
+    <div class="no-disponible">
+      <span>NO DISPONIBLE</span>
+      <span>HASTA {{ prenda.fechaDisponible }}</span>
+    </div>
+  }
+
+</div>

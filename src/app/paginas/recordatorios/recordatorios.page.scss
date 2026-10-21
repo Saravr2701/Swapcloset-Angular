@@ -1,0 +1,327 @@
+
+.contenido-recordatorios {
+  --background: #ffffff;
+}
+
+.pagina-recordatorios {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 14px 7px 30px;
+  box-sizing: border-box;
+}
+
+.informacion-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.foto-perfil {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.informacion-usuario h2 {
+  font-size: 13px;
+  font-weight: 400;
+  color: #111111;
+  margin: 7px 0 2px;
+}
+
+.ubicacion {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #777777;
+  font-size: 12px;
+
+  ion-icon {
+    font-size: 15px;
+    color: #d97757;
+  }
+}
+
+.valoracion {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  padding: 3px 7px;
+  margin-top: 7px;
+  font-size: 11px;
+  color: #111111;
+
+  ion-icon {
+    font-size: 13px;
+    color: #d97757;
+  }
+
+  .resenas {
+    color: #999999;
+  }
+}
+
+.seccion-solicitudes {
+  margin-top: 27px;
+
+  h1 {
+    font-size: 23px;
+    font-weight: 400;
+    color: #111111;
+    margin: 0 0 12px;
+  }
+}
+
+.lista-solicitudes {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.solicitud {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    22px
+    minmax(0, 1fr)
+    40px;
+
+  gap: 8px;
+  align-items: start;
+}
+
+.articulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+  }
+}
+
+.flecha-intercambio {
+  font-size: 23px;
+  color: #111111;
+  margin-top: 42px;
+}
+
+.fecha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 90px;
+  height: 19px;
+  background-color: #dedede;
+  border-radius: 20px;
+  color: #111111;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/*Declaramos cada columna manualmente para que quede alineado a la columna de solciitudes de intercambio*/
+.solicitud-prestamo {
+  grid-template-columns:
+    minmax(0, 1fr)
+    22px
+    minmax(0, 1fr)
+    40px;
+
+  .articulo {
+    grid-column: 1;
+    padding-top: 18px;
+  }
+
+  .fechas-prestamo {
+    grid-column: 3;
+  }
+
+  .acciones-solicitud {
+    grid-column: 4;
+  }
+}
+
+.solicitud-prestamo .articulo {
+  padding-top: 18px;
+}
+
+.fechas-prestamo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+
+  .fecha {
+    width: 90px;
+  }
+}
+
+.acciones-solicitud {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 13px;
+    padding: 0;
+    cursor: pointer;
+
+    ion-icon {
+      font-size: 25px;
+    }
+  }
+}
+
+.boton-aceptar {
+  background-color: #75db88;
+
+  ion-icon {
+    color: #299b42;
+  }
+}
+
+.boton-rechazar {
+  background-color: #ff8690;
+
+  ion-icon {
+    color: #dc4550;
+  }
+}
+
+.acciones-solicitud button.seleccionado {
+  outline: 2px solid #333333;
+  outline-offset: 2px;
+}
+
+.estado-solicitud {
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+  font-size: 13px;
+  text-align: center;
+  color: #454545;
+}
+
+.solicitud.respondida {
+  grid-template-columns: 100px 22px 100px;
+  justify-content: center;
+}
+
+.solicitud-prestamo.respondida {
+  grid-template-columns: 100px 100px;
+}
+
+.solicitud-prestamo.respondida .fechas-prestamo {
+  grid-column: 2;
+}
+
+.solicitud.respondida .estado-solicitud {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.seccion-devoluciones {
+  margin-top: 35px;
+
+  h2 {
+    font-size: 23px;
+    font-weight: 400;
+    color: #111111;
+    margin: 0 0 12px;
+  }
+}
+
+.lista-devoluciones {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.tarjeta-devolucion {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.imagen-devolucion {
+  position: relative;
+  width: 100px;
+  height: 100px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+  }
+}
+
+.icono-aviso {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 23px;
+  color: #ff9900;
+}
+
+.informacion-devolucion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  text-align: center;
+
+  p {
+    font-size: 11px;
+    color: #111111;
+    line-height: 1.3;
+    margin: 0;
+  }
+}
+
+.advertencia {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #d00000;
+  text-align: center;
+}
+
+.boton-recibido {
+  background-color: #dedede;
+  color: #111111;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+
+  &.confirmado {
+    background-color: #75db88;
+    color: #155c29;
+    opacity: 1;
+  }
+}
