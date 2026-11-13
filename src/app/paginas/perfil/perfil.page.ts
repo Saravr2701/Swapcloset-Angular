@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -14,9 +13,6 @@ import {
 import { addIcons } from 'ionicons';
 import {locationOutline, star, settingsOutline, notificationsOutline} from 'ionicons/icons';
 
-import { TarjetastusprendasPage } from '../../componentes/tarjetastusprendas/tarjetastusprendas.page';
-import { TarjetastusintercambiosPage } from '../../componentes/tarjetastusintercambios/tarjetastusintercambios.page';
-
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.page.html',
@@ -30,10 +26,11 @@ import { TarjetastusintercambiosPage } from '../../componentes/tarjetastusinterc
     IonToolbar,
     IonIcon,
     IonButton,
-    TarjetastusprendasPage,
-    TarjetastusintercambiosPage
+
   ]
 })
+
+//No separo los datos del ts principal porque solo es un perfil y se eliminará al conectar con la BD
 export class PerfilPage {
 
   datosPerfil = {
@@ -61,25 +58,18 @@ export class PerfilPage {
   tusPrendas = [
     {
       id: 1,
-      nombre: 'Chaqueta de cuero',
+      nombre: 'Chaqueta vaquera',
       imagen: 'assets/chaquetanegra.png',
       tipo: 'Intercambio',
-      disponible: true
+      disponible: false
     },
     {
       id: 2,
       nombre: 'Conjunto azul',
       imagen: 'assets/conjuntoazul.png',
       tipo: 'Préstamo',
-      disponible: false,
+      disponible: true,
       fechaDisponible: '16/10'
-    },
-    {
-      id: 3,
-      nombre: 'Bolso estampado',
-      imagen: 'assets/bolsoestampadomarron.png',
-      tipo: 'Préstamo',
-      disponible: true
     },
     {
       id: 4,
@@ -104,7 +94,18 @@ export class PerfilPage {
       imagenEntregada: 'assets/bolsocuerdasmarron.png',
       imagenRecibida: 'assets/bolsoestampadomarron.png',
       fechaInicio: '21/09',
-      fechaFin: '09/10'
+      fechaFin: '09/10',
+      tipo: 'Intercambio',
+      recibida: true,
+      devuelta: true,
+    },
+    {
+      id: 2,
+      imagen: 'assets/chaquetanegra.png',
+      tipo: 'Préstamo',
+      fechaInicio: '12/11',
+      fechaFin: '16/11',
+      devuelta: false,
     }
   ];
 

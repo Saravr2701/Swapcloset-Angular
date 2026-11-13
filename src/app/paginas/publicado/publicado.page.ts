@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IonContent } from '@ionic/angular';
@@ -13,6 +12,4 @@ import { IonContent } from '@ionic/angular';
     RouterLink
   ]
 })
-export class PublicadoPage {
-
-}
+export class PublicadoPage { }

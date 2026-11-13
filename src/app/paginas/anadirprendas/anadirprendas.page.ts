@@ -1,5 +1,4 @@
-
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {IonContent, IonHeader, IonIcon, IonToolbar} from '@ionic/angular';
@@ -21,31 +20,24 @@ import {RouterLink} from "@angular/router";
     RouterLink
   ]
 })
-export class AnadirprendasPage implements OnInit {
+export class AnadirprendasPage {
 
+  //Creamos un array vacio para almacenar si la prenda será prestamo, intercambio o ambas
   tiposSeleccionados: string[] = [];
 
   constructor() {
     addIcons({ imageOutline });
   }
 
-  ngOnInit() {
-  }
-
-  seleccionarTipo(tipo: string) {
-
-    if (this.tiposSeleccionados.includes(tipo)) {
-
+  //Recibe el parámetro del botón pulsado
+  seleccionarTipo(tipoSeleccionado: string) {
+    //Comprueba si el tipo seleccionado está en el array, si lo está lo elimina, sino lo añade
+    if (this.tiposSeleccionados.includes(tipoSeleccionado)) {
       this.tiposSeleccionados = this.tiposSeleccionados.filter(
-        t => t !== tipo
+        tipo => tipo !== tipoSeleccionado
       );
-
     } else {
-
-      this.tiposSeleccionados.push(tipo);
-
+      this.tiposSeleccionados.push(tipoSeleccionado);
     }
-
   }
-
 }

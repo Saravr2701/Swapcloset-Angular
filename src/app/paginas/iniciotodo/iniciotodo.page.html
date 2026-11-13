@@ -3,6 +3,7 @@
 <ion-content [fullscreen]="true" class="ion-padding">
 
   <div class="rejilla">
+    <!-- Crea una tarjeta por cada prenda existente en la lista filtrada de prendas -->
     @for (prenda of prendas; track prenda.id;) {
       <app-tarjetasprendas [prenda]="prenda" />
     }

@@ -1,4 +1,3 @@
-
 <ion-header [translucent]="false" class="cabecera-perfil">
   <ion-toolbar>
     <div class="cabecera">
@@ -17,18 +16,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="contenido-perfil">
-
   <div class="perfil">
     <div class="informacion-usuario">
-
-      <img
-        [src]="datosPerfil.imagen"
-        [alt]="datosPerfil.nombre"
-        class="foto-perfil"
-      >
-
+      <img [src]="datosPerfil.imagen" [alt]="datosPerfil.nombre" class="foto-perfil">
       <h2>{{ datosPerfil.nombre }}</h2>
-
       <div class="ubicacion">
         <ion-icon name="location-outline"></ion-icon>
         <span>{{ datosPerfil.ubicacion }}</span>
@@ -63,34 +54,74 @@
           }
         </div>
       </div>
-    </div>
 
-    <div class="seccion-tusprendas">
+      <div class="tus-prendas">
+        <h3>Tus prendas</h3>
 
-      <h3>Tus prendas</h3>
+        <div class="rejilla-prendas">
+          @for (prenda of tusPrendas; track prenda.id) {
+            <div class="tarjeta-prenda">
 
-      <div class="rejilla-prendas">
-        @for (prenda of tusPrendas; track prenda.id) {
-          <app-tarjetasperfil [prenda]="prenda" />
-        }
+              <div class="imagen-prenda">
+                <img [src]="prenda.imagen" [alt]="prenda.nombre" [class.no-disponible]="!prenda.disponible"
+                >
+                <span class="etiqueta-tipo">
+                  {{ prenda.tipo }}
+                </span>
+
+                @if (!prenda.disponible) {
+                  <div class="overlay-no-disponible">
+                    <span>NO DISPONIBLE</span>
+                  </div>
+                }
+              </div>
+              <p class="nombre-prenda">{{ prenda.nombre }}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="tus-intercambios">
+        <h3>Tus intercambios</h3>
+
+        <div class="caja-tusintercambios">
+          @for (prenda of tusIntercambios; track prenda.id) {
+            <div class="tarjeta-intercambio">
+              <img [src]="prenda.imagenEntregada" alt="Prenda entregada">
+              <img [src]="prenda.imagenRecibida" alt="Prenda recibida">
+
+              <button
+                type="button"
+                class="boton-confirmar"
+                [class.confirmado]="prenda.devuelta"
+                (click)="prenda.devuelta = !prenda.devuelta">
+
+                @if (prenda.devuelta) {
+                  Envío confirmado
+                } @else {
+                  Confirmar envío
+                  Añadir recordatorio
+                }
+              </button>
+              <p>Inicio: {{ prenda.fechaInicio }}</p>
+              <p>Fin: {{ prenda.fechaFin }}</p>
+
+              <button
+                type="button"
+                class="boton-confirmar"
+                [class.confirmado]="prenda.recibida"
+                (click)="prenda.recibida = !prenda.recibida">
+
+                @if (prenda.recibida) {
+                  Recepción confirmada
+                } @else {
+                  Confirmar recepción
+                }
+              </button>
+            </div>
+          }
+        </div>
       </div>
     </div>
-
-    <div class="seccion-tusintercambios">
-
-      <h3>Tus intercambios</h3>
-
-      <div class="lista-intercambios">
-
-        @for (intercambio of tusIntercambios; track intercambio.id) {
-          <app-tarjetastusintercambios
-            [intercambio]="intercambio"
-          />
-        }
-
-      </div>
-    </div>
-
   </div>
-
 </ion-content>

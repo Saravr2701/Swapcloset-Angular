@@ -8,6 +8,9 @@
   gap: 11px;
   padding: 5px 0;
   background: white;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .foto-chat {
@@ -31,7 +34,7 @@
 
   h3 {
     font-family: Georgia, serif;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
     color: #111111;
     margin: 0;
@@ -47,7 +50,7 @@
 
 p {
   font-family: Georgia, serif;
-  font-size: 12px;
+  font-size: 13px;
   color: #929292;
   margin: 0;
 

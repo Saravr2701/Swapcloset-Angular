@@ -1,41 +1,36 @@
-
 <ion-header [translucent]="false">
   <ion-toolbar>
 
     <div class="cabecera">
       <h1>SwapCloset</h1>
-      <div class="saldo">0.00€</div>
+      <div class="saldo">{{ saldo.cantidad.toFixed(2) }}€</div>
     </div>
 
     <div class="busqueda">
 
-      <div class="search-box">
+      <div class="caja-busqueda">
         <ion-icon name="search-outline"></ion-icon>
-        <input type="text" placeholder="Buscar" />
+        <input type="text" placeholder="Buscar"/>
       </div>
 
+      <!-- Boton que cuando lo pulsemos cambie al estado contrario de mostrar filtro -->
       <button
         type="button"
-        class="filter-btn"
+        class="boton-filtro"
         (click)="mostrarFiltros = !mostrarFiltros"
         [attr.aria-expanded]="mostrarFiltros"
-        aria-controls="panel-filtros"
-        aria-label="Mostrar u ocultar filtros">
+        aria-controls="panel-filtros">
 
         <ion-icon name="options-outline"></ion-icon>
-
       </button>
-
     </div>
 
+    <!-- cuando mostrarfiltros sea true (es decir que debe desplegarse) mostramos el panel de los filtros  -->
     @if (mostrarFiltros) {
 
       <div class="panel-filtros" id="panel-filtros">
-
         <p>Filtrar por:</p>
-
         <div class="opciones-filtros">
-
           <div class="columna-filtros">
 
             <label>
@@ -52,7 +47,6 @@
               <input type="checkbox">
               Color
             </label>
-
           </div>
 
           <div class="columna-filtros">
@@ -73,17 +67,21 @@
             </label>
 
           </div>
-
         </div>
-
       </div>
-
     }
 
     <div class="categorias">
 
+      <!-- Creamos un for de la lista del ts y cada elemento es identificado por su ruta, ya que es un identificar único -->
       @for (categoria of categorias; track categoria.ruta) {
 
+        <!-- Usamos a porque cada boton es realmente un enlace que nos lleva a otra página
+              en ella decimos que su ruta es la correspondiente a categoria.ruta porque es la variable iterable del bucle
+              con el routerlinkactive hacemos que cuando está seleccionada cambie su fondo y color de letra y con activeoptions
+              le decimos que solo se marque como true si coincide exactamente con la ruta indicada
+              por último con categoria.nombre entre llaves dobles hacemos una interpolaricación para poder mostrar en el HTML el
+              valor de una propiedad del ts-->
         <a
           [routerLink]="categoria.ruta"
           routerLinkActive="activa"
@@ -91,12 +89,8 @@
           class="categoria">
 
           {{ categoria.nombre }}
-
         </a>
-
       }
-
     </div>
-
   </ion-toolbar>
 </ion-header>

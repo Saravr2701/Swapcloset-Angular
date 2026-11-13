@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -8,7 +7,7 @@ import {
 } from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
-import { logoApple } from 'ionicons/icons';
+import { logoApple, logoGoogle } from 'ionicons/icons';
 
 @Component({
   selector: 'app-login',
@@ -22,13 +21,14 @@ import { logoApple } from 'ionicons/icons';
   ]
 })
 export class LoginPage {
-
+  //Creamos una variable que solo va a poder adoptar un valor entre los tres posibles, la usamos en el html. El = '' indica su valor inicial
   pantalla: 'bienvenida' | 'iniciosesion' | 'registro' = 'bienvenida';
 
   constructor() {
-    addIcons({ logoApple });
+    addIcons({ logoApple,logoGoogle });
   }
 
+  //Funcion para cambiar la pantalla (la funcion cambia el valor en una nueva variable y luego pasa su valor a la variable del ts)
   cambiarPantalla(
     nuevaPantalla: 'bienvenida' | 'iniciosesion' | 'registro'
   ) {

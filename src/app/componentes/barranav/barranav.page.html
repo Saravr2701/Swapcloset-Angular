@@ -1,26 +1,55 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="iniciotodo">
-      <ion-icon name="home-outline"></ion-icon>
-      <ion-label>Inicio</ion-label>
+    <ion-tab-button
+      tab="iniciotodo"
+      [class.boton-atras]="router.url.startsWith('/tabs/detalleprenda') ||
+                            router.url.startsWith('/tabs/solicitarprenda') ">
+      <ion-icon
+        [name]="router.url.startsWith('/tabs/detalleprenda') ||
+                router.url.startsWith('/tabs/solicitarprenda')
+            ? 'arrow-back-outline'
+            : 'home-outline'">
+      </ion-icon>
+      <ion-label>
+        {{
+          router.url.startsWith('/tabs/detalleprenda') ||
+          router.url.startsWith('/tabs/solicitarprenda')
+            ? 'Atrás'
+            : 'Inicio'
+        }}
+      </ion-label>
     </ion-tab-button>
     <ion-tab-button tab="anadirprendas">
       <ion-icon name="duplicate-outline"></ion-icon>
       <ion-label>Añadir Prenda</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="chats">
-      <ion-icon name="chatbubbles-outline"></ion-icon>
-      <ion-label>Chats</ion-label>
+    <ion-tab-button
+      tab="chats"
+      [class.boton-atras]="router.url.startsWith('/tabs/conversacion') ">
+      <ion-icon
+        [name]="router.url.startsWith('/tabs/conversacion')
+            ? 'arrow-back-outline'
+            : 'chatbubbles-outline'">
+      </ion-icon>
+      <ion-label>
+        {{
+          router.url.startsWith('/tabs/conversacion')
+            ? 'Atrás'
+            : 'Chats'
+        }}
+      </ion-label>
     </ion-tab-button>
+    <!-- slot indica donde se crea la barra de naveagión (top o bottom (arriba o abajo))
+         en tab indicamos a que página nos debe llevar al pulsar ese boton -->
 
     <ion-tab-button
       tab="perfil"
       [class.boton-atras]="router.url.startsWith('/tabs/ajustes') ||
-                       router.url.startsWith('/tabs/recordatorios')">
+                            router.url.startsWith('/tabs/recordatorios')">
 
       <ion-icon
         [name]="router.url.startsWith('/tabs/ajustes') ||
-            router.url.startsWith('/tabs/recordatorios')
+                router.url.startsWith('/tabs/recordatorios')
             ? 'arrow-back-outline'
             : 'person-outline'">
       </ion-icon>
@@ -33,8 +62,18 @@
             : 'Perfil'
         }}
       </ion-label>
-
     </ion-tab-button>
+    <!-- En el boton de perfil estamos ajustando lo que mostramos dependiendo de la página
+         en la que estemos ya que si estamos en ajustes o recordatorios ya estaríamos en perfil
+         ya que el camino para llegar a estas pantallas sería perfil/ajustes o perfil/recordatorio
+         por lo que visualmente queda mejor mostrar una flecha hacia atrás que el icono de perfil
+         ya que sería para salir de esas pantallas "hijas" de perfil
 
+         Esto lo hacemos diciendole con router.url.startsWith que si la url es /tabs/ajustes o
+         /tabs/recordatorios nos cambie el icono a la flecha hacia atrás y el label (texto) por
+         Atrás
+
+         {{}} es lo conocido por interpolarización y se usa para mostrar un resultado devuelto por
+         Typescript-->
   </ion-tab-bar>
 </ion-tabs>

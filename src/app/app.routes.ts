@@ -48,6 +48,10 @@ export const routes: Routes = [
         loadComponent: () => import('./paginas/chats/chats.page').then( m => m.ChatsPage)
       },
       {
+        path: 'conversacion/:id',
+        loadComponent: () => import('./paginas/conversacion/conversacion.page').then( m => m.ConversacionPage)
+      },
+      {
         path: 'anadirprendas',
         loadComponent: () => import('./paginas/anadirprendas/anadirprendas.page').then( m => m.AnadirprendasPage)
       },
@@ -75,6 +79,16 @@ export const routes: Routes = [
         path: 'publicado',
         loadComponent: () => import('./paginas/publicado/publicado.page').then( m => m.PublicadoPage)
       },
+      {
+        path: 'detalleprenda/:id',
+        loadComponent: () =>
+          import('./componentes/detalleprenda/detalleprenda.page')
+            .then(m => m.DetalleprendaPage)
+      },
+      {
+        path: 'solicitarprenda/:id',
+        loadComponent: () => import('./componentes/solicitarprenda/solicitarprenda.page').then( m => m.SolicitarprendaPage)
+      },
     ]
   },
   {
@@ -100,5 +114,17 @@ export const routes: Routes = [
   {
     path: 'tarjetastusprestamos',
     loadComponent: () => import('./componentes/tarjetastusprestamos/tarjetastusprestamos.page').then( m => m.TarjetastusprestamosPage)
+  },
+  {
+    path: 'conversacion',
+    loadComponent: () => import('./paginas/conversacion/conversacion.page').then( m => m.ConversacionPage)
+  },
+  {
+    path: 'recordatorios',
+    loadComponent: () => import('./paginas/recordatorios/recordatorios.page').then( m => m.RecordatoriosPage)
+  },
+  {
+    path: 'pantallaexito',
+    loadComponent: () => import('./paginas/pantallaexito/pantallaexito.page').then( m => m.PantallaexitoPage)
   },
 ];

@@ -3,15 +3,10 @@
     <div class="cabecera">
       <h1>Mensajes</h1>
     </div>
-
-    <div class="busqueda">
-      <div class="search-box">
-        <input type="text" placeholder="Buscar una conversación" />
-      </div>
-    </div>
   </ion-toolbar>
 </ion-header>
 
+<!-- For para mostrar cada chat existente en la lista del ts de mensajes importada en el ts de los chats -->
 <ion-content [fullscreen]="true" class="contenido-chats">
   <div class="lista-chats">
     @for (chat of chats; track chat.id) {

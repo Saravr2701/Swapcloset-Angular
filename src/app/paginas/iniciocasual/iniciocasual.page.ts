@@ -1,49 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent } from '@ionic/angular';
-import {TarjetasprendasPage} from "../../componentes/tarjetasprendas/tarjetasprendas.page";
+
+import { TarjetasprendasPage } from '../../componentes/tarjetasprendas/tarjetasprendas.page';
 import { HeaderPage } from '../../componentes/header/header.page';
 
+import { CATALOGO_PRENDAS } from '../../datos/catalogoprendas';
+
 @Component({
-  selector: 'app-iniciotodo',
+  selector: 'app-iniciocasual',
   templateUrl: './iniciocasual.page.html',
   styleUrls: ['./iniciocasual.page.scss'],
   standalone: true,
-  imports: [IonContent,CommonModule, FormsModule, TarjetasprendasPage, HeaderPage]
+  imports: [
+    IonContent,
+    CommonModule,
+    FormsModule,
+    TarjetasprendasPage,
+    HeaderPage
+  ]
 })
-export class IniciocasualPage implements OnInit {
+export class IniciocasualPage {
 
-  prendas = [
-    {
-      id: 1,
-      titulo: 'Vaqueros skinny básicos',
-      subtitulo: '40 - Levis',
-      etiqueta: 'Intercambio',
-      imagen: './assets/vaqueroslevis.png'
-    },
-    {
-      id: 2,
-      titulo: 'Conjunto top y short',
-      subtitulo: 'L - Mango',
-      etiqueta: 'Préstamo',
-      imagen: './assets/conjunto.png'
-    },
-    {
-      id: 3,
-      titulo: 'Pantalones capri rotos',
-      subtitulo: '38 - H&M',
-      etiqueta: 'Intercambio',
-      imagen: './assets/caprisrotos.png'
-    },
-  ];
+  prendas = CATALOGO_PRENDAS.filter(
+    prenda => prenda.categorias.includes('casual')
+  );
+
+  constructor() {}
 
   limpiar() {
     console.log('Limpiando filtros...');
-  }
-  constructor() { }
-
-  ngOnInit() {
   }
 
 }

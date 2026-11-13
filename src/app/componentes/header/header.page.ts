@@ -1,8 +1,7 @@
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-
+import { SALDO } from '../../datos/saldo';
 import {
   IonHeader,
   IonToolbar,
@@ -27,9 +26,12 @@ import { searchOutline, optionsOutline } from 'ionicons/icons';
   ]
 })
 export class HeaderPage {
+  saldo = SALDO;
 
+  //variable que usaremos para controlar si el filtro esta activo o no
   mostrarFiltros = false;
 
+  //lista donde almacenamos todas las categorias existentes y donde debe llevar cada una
   categorias = [
     {
       nombre: 'Todo',

@@ -1,20 +1,33 @@
-<div class="tarjeta-chat">
+<!-- Toda la tarjeta funciona como un enlace -->
+<a
+  class="tarjeta-chat"
+  [routerLink]="['/tabs/conversacion', chat.id]">
 
+  <!-- Fotografía de la persona -->
   <img
     [src]="chat.imagen"
     [alt]="chat.nombre"
-    class="foto-chat"
-  >
+    class="foto-chat">
 
   <div class="informacion-chat">
+
     <div class="fila-nombre">
-      <h3>{{ chat.nombre }}</h3>
+
+      <!-- Nombre de la persona -->
+      <h3>{{ chat.nombre }} | {{chat.prendaSolicitada}}</h3>
+
+      <!-- Punto azul si hay mensajes sin leer -->
       @if (chat.sinLeer) {
         <span class="punto-azul"></span>
       }
+
     </div>
+
+    <!-- Mostramos el último mensaje -->
     <p [class.mensaje-no-leido]="chat.sinLeer">
-      {{ chat.ultimoMensaje }}
+      {{ chat.mensajes[chat.mensajes.length - 1].texto }}
     </p>
+
   </div>
-</div>
+
+</a>

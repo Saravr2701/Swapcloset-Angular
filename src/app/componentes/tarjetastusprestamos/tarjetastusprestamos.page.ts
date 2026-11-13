@@ -10,7 +10,7 @@ import {
 } from 'ionicons/icons';
 
 @Component({
-  selector: 'app-tarjetastusintercambios',
+  selector: 'app-tarjetastusprestamos',
   templateUrl: './tarjetastusprestamos.page.html',
   styleUrls: ['./tarjetastusprestamos.page.scss'],
   standalone: true,
