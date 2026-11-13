@@ -1,7 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton} from '@ionic/angular';
+import {
+  IonContent,
+  IonToolbar,
+  IonIcon,
+  IonFooter
+} from '@ionic/angular';
+
 import { CHATS, Chat } from '../../datos/mensajeschats';
+
+import { addIcons } from 'ionicons';
+import {
+  happyOutline,
+  attachOutline,
+  cameraOutline,
+  micOutline,
+  sendOutline
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-conversacion',
@@ -10,13 +25,25 @@ import { CHATS, Chat } from '../../datos/mensajeschats';
   standalone: true,
   imports: [
     IonContent,
+    IonIcon,
+    IonToolbar,
+    IonFooter
   ]
 })
+
 export class ConversacionPage implements OnInit {
 
   conversacion: Chat[] = [];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {
+    addIcons({
+      happyOutline,
+      attachOutline,
+      cameraOutline,
+      micOutline,
+      sendOutline
+    });
+  }
 
   ngOnInit() {
 

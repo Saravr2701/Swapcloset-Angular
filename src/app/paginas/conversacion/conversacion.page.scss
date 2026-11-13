@@ -48,3 +48,82 @@
     color: #777777;
   }
 }
+
+.barra-mensajes {
+  box-shadow: none;
+
+  ion-toolbar {
+    --background: #ffffff;
+    --border-width: 0;
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --padding-top: 7px;
+    --padding-bottom: 7px;
+  }
+}
+
+.escribir-mensaje {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.campo-mensaje {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  gap: 7px;
+  padding: 0 10px;
+  height: 38px;
+  border-radius: 25px;
+  background-color: #e5e5e5;
+
+  ion-icon {
+    font-size: 19px;
+    color: #777777;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+    color: #111111;
+  }
+
+  input::placeholder {
+    color: #999999;
+  }
+}
+
+.boton-microfono,
+.boton-enviar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  ion-icon {
+    font-size: 19px;
+  }
+}
+
+.boton-microfono {
+  background-color: #e5e5e5;
+  color: #777777;
+}
+
+.boton-enviar {
+  background-color: #111111;
+  color: #ffffff;
+}
