@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Recorremos la conversación encontrada -->
+  @for (chat of conversacion; track chat.id) {
+
+    <div class="datos-chat">
+      <img [src]="chat.prenda" [alt]="chat.prendaSolicitada" class="foto-prenda">
+      <div class="informacion-prenda">
+        <h4>{{ chat.nombre }}</h4>
+        <p>{{ chat.prendaSolicitada }}</p>
+      </div>
+
+    </div>
+    <div class="mensajes">
+      @for (mensaje of chat.mensajes; track $index) {
+        <div class="mensaje" [class.mio]="mensaje.mio">
+          {{ mensaje.texto }}
+        </div>
+      }
+    </div>
+  } @empty {
+    <p>No se ha encontrado la conversación.</p>
+  }
+</ion-content>

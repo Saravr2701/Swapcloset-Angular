@@ -1,0 +1,50 @@
+.mensajes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+.mensaje {
+  background-color: #dedede;
+  color: #111111;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 75%;
+  font-size: 15px;
+  align-self: flex-start;
+}
+
+.mensaje.mio {
+  background-color: #336e34;
+  color: white;
+  align-self: flex-end;
+}
+
+.datos-chat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.foto-prenda {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.informacion-prenda {
+  h4 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #777777;
+  }
+}

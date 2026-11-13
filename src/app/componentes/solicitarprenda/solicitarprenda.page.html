@@ -1,0 +1,78 @@
+<ion-header [translucent]="false" class="cabecera">
+  <ion-toolbar>
+    <div class="cabecera">
+      <h1>SwapCloset</h1>
+      <div class="saldo">{{ saldo.cantidad.toFixed(2) }}€</div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if (prenda; as articulo) {
+    <div class="cuadro-solicitud">
+      @if (articulo.etiqueta === 'Intercambio') {
+        <h2>Solicitud de intercambio</h2>
+
+        <div class="imagenes-intercambio">
+          <div class="prenda">
+            <label class="zona-foto" for="foto-prenda">
+              <input type="file" id="foto-prenda" accept="image/*" hidden>
+
+              <div class="contenido-foto">
+                <div class="circulo-camara">
+                  <ion-icon name="image-outline"></ion-icon>
+                </div>
+                <p>Pulsa para añadir una foto</p>
+              </div>
+            </label>
+            <p>Prenda ofrecida</p>
+          </div>
+
+          <div class="prenda">
+            <img [src]="articulo.imagen" alt="Imagen prenda">
+            <p>Prenda solicitada</p>
+          </div>
+        </div>
+
+      } @else if (articulo.etiqueta === 'Préstamo') {
+
+        <h2>Solicitud de préstamo</h2>
+
+        <div class="imagen-prestamo">
+          <img [src]="articulo.imagen" alt="Imagen prestamo">
+          <p>Prenda solicitada</p>
+        </div>
+
+      }
+
+      <div class="fechas">
+
+        <div class="campo-fecha">
+          <label>Fecha inicio</label>
+          <input type="date">
+        </div>
+
+        <div class="campo-fecha">
+          <label>Fecha fin</label>
+          <input type="date">
+        </div>
+      </div>
+      @if (saldo.cantidad === 0) {
+        <div class="aviso-saldo">
+          <p>Saldo insuficiente</p>
+          <p>Para esta solicitud necesitas un saldo mínimo de 40€</p>
+
+          <button (click)="agregarDeposito()">
+            Agregar depósito
+          </button>
+        </div>
+      }@else {
+        <div class="boton-solicitar">
+          <button routerLink="/pantallaexito" (click)="disminuirDeposito()">
+            Solicitar
+          </button>
+        </div>
+      }
+    </div>
+  }
+</ion-content>

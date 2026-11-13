@@ -1,0 +1,245 @@
+.contenido-detalle {
+  --background: #ffffff;
+}
+
+.detalle-prenda {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 20px 18px 35px;
+  box-sizing: border-box;
+  color: #111111;
+}
+
+.boton-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 0 0 15px;
+  color: #777777;
+  cursor: pointer;
+  font-size: 12px;
+
+  ion-icon {
+    font-size: 17px;
+  }
+}
+
+.datos-vendedor {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.avatar-vendedor {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ede5df;
+  color: #8b624f;
+  font-size: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vendedor-textos {
+  flex: 1;
+  min-width: 0;
+}
+
+.nombre-vendedor {
+  font-size: 14px;
+  color: #222222;
+  font-weight: 600;
+}
+
+.ubicacion-vendedor {
+  font-size: 11px;
+  color: #888888;
+  margin-top: 5px;
+}
+
+.valoracion-vendedor {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  white-space: nowrap;
+
+  ion-icon {
+    color: #d97757;
+    font-size: 15px;
+  }
+}
+
+.foto-grande {
+  width: min(62%, 245px);
+  aspect-ratio: 0.75;
+  margin: 0 auto 20px;
+  border-radius: 17px;
+  overflow: hidden;
+  background: #f4f4f4;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.nombre-articulo {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #222222;
+}
+
+/* CONTENEDOR DE LAS SECCIONES */
+
+.columnas-detalle {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  text-align: left;
+}
+
+/* TARJETAS DE DESCRIPCIÓN Y DURACIÓN */
+
+.descripcion-producto,
+.otros-detalles {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 17px 18px;
+  background: #fcfaf9;
+  border: 1px solid #ece6e2;
+  border-radius: 15px;
+}
+
+/* DESCRIPCIÓN DESTACADA */
+
+.descripcion-producto {
+  border-left: 3px solid #777777;
+}
+
+/* TÍTULOS DE CADA SECCIÓN */
+
+.columnas-detalle h2 {
+  margin: 0 0 11px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #302923;
+}
+
+/* CONTENIDO DE LAS SECCIONES */
+
+.columnas-detalle p {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #615a56;
+}
+
+/* INFORMACIÓN BÁSICA: TALLA, COLOR Y ESTADO */
+
+.especificaciones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+
+  margin-top: 18px;
+  padding-top: 17px;
+  border-top: 1px solid #e8e0dc;
+  text-align: left;
+
+  p {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    min-width: 0;
+    padding: 12px;
+    box-sizing: border-box;
+
+    background: #f3efec;
+    border: 1px solid #eee7e2;
+    border-radius: 11px;
+
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: #606060;
+  }
+
+  p:last-child {
+    grid-column: 1 / -1;
+  }
+
+  strong {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+}
+
+/* BOTÓN SOLICITAR PRÉSTAMO / INTERCAMBIAR */
+
+.boton-intercambiar {
+  display: block;
+  min-width: 165px;
+  margin: 25px auto 10px;
+  padding: 11px 22px;
+
+  background: #5a5a5a;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 25px;
+
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #777777;
+  }
+}
+
+/* AVISO DE SOLICITUD */
+
+.aviso-solicitud {
+  margin: 12px auto 0;
+  max-width: 280px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #777777;
+}
+
+/* SI EL ARTÍCULO NO EXISTE */
+
+.articulo-no-encontrado {
+  padding: 40px 20px;
+  text-align: center;
+  color: #333333;
+
+  a {
+    color: #555555;
+  }
+}
