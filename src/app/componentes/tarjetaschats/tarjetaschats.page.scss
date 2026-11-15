@@ -7,7 +7,7 @@
   align-items: center;
   gap: 11px;
   padding: 5px 0;
-  background: white;
+  background: var(--ion-background-color);
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -36,7 +36,7 @@
     font-family: Georgia, serif;
     font-size: 15px;
     font-weight: 400;
-    color: #111111;
+    color: var(--ion-color-texto-tarjetas);
     margin: 0;
   }
 }
@@ -51,7 +51,7 @@
 p {
   font-family: Georgia, serif;
   font-size: 13px;
-  color: #929292;
+  color: var(--ion-color-texto-claro);
   margin: 0;
 
   white-space: nowrap;
@@ -60,5 +60,5 @@ p {
 }
 
 .mensaje-no-leido {
-  color: #111111;
+  color: var(--ion-color-texto-tarjetas);
 }

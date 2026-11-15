@@ -1,5 +1,5 @@
 .contenido-detalle {
-  --background: #ffffff;
+  --background: var(--ion-background-color);
 }
 
 .detalle-prenda {
@@ -9,22 +9,6 @@
   padding: 20px 18px 35px;
   box-sizing: border-box;
   color: #111111;
-}
-
-.boton-volver {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: none;
-  border: none;
-  padding: 0 0 15px;
-  color: #777777;
-  cursor: pointer;
-  font-size: 12px;
-
-  ion-icon {
-    font-size: 17px;
-  }
 }
 
 .datos-vendedor {
@@ -56,13 +40,13 @@
 
 .nombre-vendedor {
   font-size: 14px;
-  color: #222222;
+  color: var(--ion-text-color);
   font-weight: 600;
 }
 
 .ubicacion-vendedor {
   font-size: 11px;
-  color: #888888;
+  color: var(--ion-color-texto-tarjetas);
   margin-top: 5px;
 }
 
@@ -72,6 +56,7 @@
   gap: 4px;
   font-size: 10px;
   white-space: nowrap;
+  color : var(--ion-text-color);
 
   ion-icon {
     color: #d97757;
@@ -101,10 +86,8 @@
   font-size: 19px;
   font-weight: 600;
   line-height: 1.35;
-  color: #222222;
+  color: var(--ion-text-color);
 }
-
-/* CONTENEDOR DE LAS SECCIONES */
 
 .columnas-detalle {
   display: flex;
@@ -114,45 +97,35 @@
   text-align: left;
 }
 
-/* TARJETAS DE DESCRIPCIÓN Y DURACIÓN */
-
 .descripcion-producto,
 .otros-detalles {
   width: 100%;
   box-sizing: border-box;
   padding: 17px 18px;
-  background: #fcfaf9;
+  background: var(--ion-color-fondo-tarjetas);
   border: 1px solid #ece6e2;
   border-radius: 15px;
 }
 
-/* DESCRIPCIÓN DESTACADA */
-
 .descripcion-producto {
-  border-left: 3px solid #777777;
+  border-left: 3px solid var(--ion-color-texto-tarjetas);
 }
-
-/* TÍTULOS DE CADA SECCIÓN */
 
 .columnas-detalle h2 {
   margin: 0 0 11px;
   font-size: 17px;
   font-weight: 600;
   line-height: 1.3;
-  color: #302923;
+  color: var(--ion-text-color);
 }
-
-/* CONTENIDO DE LAS SECCIONES */
 
 .columnas-detalle p {
   margin: 0;
   font-size: 12.5px;
   font-weight: 400;
   line-height: 1.65;
-  color: #615a56;
+  color: var(--ion-color-texto-tarjetas);
 }
-
-/* INFORMACIÓN BÁSICA: TALLA, COLOR Y ESTADO */
 
 .especificaciones {
   display: grid;
@@ -173,13 +146,13 @@
     padding: 12px;
     box-sizing: border-box;
 
-    background: #f3efec;
+    background: var(--ion-color-fondo-oscuro-tarjetas);
     border: 1px solid #eee7e2;
     border-radius: 11px;
 
     font-size: 12.5px;
     line-height: 1.4;
-    color: #606060;
+    color: var(--ion-color-texto-tarjetas);
   }
 
   p:last-child {
@@ -192,11 +165,9 @@
     font-weight: 700;
     letter-spacing: 0.7px;
     text-transform: uppercase;
-    color: #000000;
+    color: var(--ion-text-color);
   }
 }
-
-/* BOTÓN SOLICITAR PRÉSTAMO / INTERCAMBIAR */
 
 .boton-intercambiar {
   display: block;
@@ -204,8 +175,8 @@
   margin: 25px auto 10px;
   padding: 11px 22px;
 
-  background: #5a5a5a;
-  color: #ffffff;
+  background: var(--ion-color-fondo-tarjetas);
+  color: var(--ion-color-texto-tarjetas);
 
   border: none;
   border-radius: 25px;
@@ -221,8 +192,6 @@
   }
 }
 
-/* AVISO DE SOLICITUD */
-
 .aviso-solicitud {
   margin: 12px auto 0;
   max-width: 280px;
@@ -231,8 +200,6 @@
   line-height: 1.5;
   color: #777777;
 }
-
-/* SI EL ARTÍCULO NO EXISTE */
 
 .articulo-no-encontrado {
   padding: 40px 20px;

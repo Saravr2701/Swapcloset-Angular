@@ -7,7 +7,7 @@
           <ion-icon name="settings-outline"></ion-icon>
         </ion-button>
 
-        <ion-button fill="clear" routerLink="/tabs/recordatorios">
+        <ion-button fill="clear" routerLink="/tabs/recordatorios" [class.campana-activa]="hayRecordatorios">
           <ion-icon name="notifications-outline"></ion-icon>
         </ion-button>
       </div>
@@ -60,11 +60,10 @@
 
         <div class="rejilla-prendas">
           @for (prenda of tusPrendas; track prenda.id) {
-            <div class="tarjeta-prenda">
+            <a class="tarjeta-prenda" [routerLink]="['/tabs/tarjetaseditarprendas',prenda.id]">
 
               <div class="imagen-prenda">
-                <img [src]="prenda.imagen" [alt]="prenda.nombre" [class.no-disponible]="!prenda.disponible"
-                >
+                <img [src]="prenda.imagen" [alt]="prenda.nombre" [class.no-disponible]="!prenda.disponible">
                 <span class="etiqueta-tipo">
                   {{ prenda.tipo }}
                 </span>
@@ -76,49 +75,112 @@
                 }
               </div>
               <p class="nombre-prenda">{{ prenda.nombre }}</p>
-            </div>
+            </a>
           }
         </div>
       </div>
 
       <div class="tus-intercambios">
-        <h3>Tus intercambios</h3>
-
+        <h3>Tus prendas temporales</h3>
         <div class="caja-tusintercambios">
-          @for (prenda of tusIntercambios; track prenda.id) {
-            <div class="tarjeta-intercambio">
-              <img [src]="prenda.imagenEntregada" alt="Prenda entregada">
-              <img [src]="prenda.imagenRecibida" alt="Prenda recibida">
+          @for (prenda of tusPrendasTemporales; track prenda.id) {
+            @if (prenda.tipo === 'Intercambio') {
+              <div class="tarjeta-intercambio">
+                <img [src]="prenda.imagenEntregada" alt="Tu prenda">
+                <img [src]="prenda.imagenRecibida" alt="Prenda recibida">
 
-              <button
-                type="button"
-                class="boton-confirmar"
-                [class.confirmado]="prenda.devuelta"
-                (click)="prenda.devuelta = !prenda.devuelta">
+                <button
+                  type="button"
+                  class="boton-confirmar"
+                  [class.confirmado]="prenda.devuelta"
+                  (click)="prenda.devuelta = !prenda.devuelta">
 
-                @if (prenda.devuelta) {
-                  Envío confirmado
-                } @else {
-                  Confirmar envío
-                  Añadir recordatorio
+                  @if (prenda.devuelta) {
+                    Envío confirmado
+                  } @else {
+                    Confirmar envío
+                  }
+                </button>
+
+                <p>Inicio: {{ prenda.fechaInicio }}</p>
+                <p>Fin: {{ prenda.fechaFin }}</p>
+
+                <button
+                  type="button"
+                  class="boton-confirmar"
+                  [class.confirmado]="prenda.recibida"
+                  (click)="prenda.recibida = !prenda.recibida">
+
+                  @if (prenda.recibida) {
+                    Recepción confirmada
+                  } @else {
+                    Confirmar recepción
+                  }
+                </button>
+
+                @if (!prenda.devuelta) {
+                  <button
+                    type="button"
+                    class="boton-recordatorio"
+                    [class.activo]="prenda.recordatorio"
+                    (click)="abrirRecordatorio(prenda)">
+
+                    <ion-icon name="notifications-outline"></ion-icon>
+
+                    @if (prenda.recordatorio) {
+                      Recordatorio añadido
+                    } @else {
+                      Añadir recordatorio
+                    }
+                  </button>
                 }
-              </button>
-              <p>Inicio: {{ prenda.fechaInicio }}</p>
-              <p>Fin: {{ prenda.fechaFin }}</p>
+              </div>
 
-              <button
-                type="button"
-                class="boton-confirmar"
-                [class.confirmado]="prenda.recibida"
-                (click)="prenda.recibida = !prenda.recibida">
+            } @else if (prenda.tipo === 'Préstamo') {
+              <div class="tarjeta-prestamo">
 
-                @if (prenda.recibida) {
-                  Recepción confirmada
-                } @else {
-                  Confirmar recepción
-                }
-              </button>
-            </div>
+                <img [src]="prenda.imagenRecibida" alt="Prenda prestada">
+
+                <div class="fechas-prestamo">
+                  <p>Inicio: {{ prenda.fechaInicio }}</p>
+                  <p>Fin: {{ prenda.fechaFin }}</p>
+                </div>
+
+
+                <div class="botones-prestamo">
+
+                  <button
+                    type="button"
+                    class="boton-confirmar"
+                    [class.confirmado]="prenda.devuelta"
+                    (click)="prenda.devuelta = !prenda.devuelta">
+
+                    @if (prenda.devuelta) {
+                      Envío confirmado
+                    } @else {
+                      Confirmar envío
+                    }
+                  </button>
+
+                  @if (!prenda.devuelta) {
+                    <button
+                      type="button"
+                      class="boton-recordatorio"
+                      [class.activo]="prenda.recordatorio"
+                      (click)="abrirRecordatorio(prenda)">
+
+                      <ion-icon name="notifications-outline"></ion-icon>
+
+                      @if (prenda.recordatorio) {
+                        Recordatorio añadido
+                      } @else {
+                        Añadir recordatorio
+                      }
+                    </button>
+                  }
+                </div>
+              </div>
+            }
           }
         </div>
       </div>

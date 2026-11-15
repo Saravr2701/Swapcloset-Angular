@@ -1,0 +1,21 @@
+.cabecera-mensajes {
+  box-shadow: none;
+
+  ion-toolbar {
+    --background: var(--ion-background-color);
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --padding-top: 6px;
+    --padding-bottom: 10px;
+  }
+}
+
+.contenido-chats {
+  --background: var(--ion-background-color);
+}
+
+.lista-chats {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 28px;
+}

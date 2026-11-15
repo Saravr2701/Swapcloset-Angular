@@ -7,8 +7,8 @@
 
 
 .mensaje {
-  background-color: #dedede;
-  color: #111111;
+  background-color: var(--ion-color-fondo-tarjetas);
+  color: var(--ion-text-color);
   padding: 10px;
   border-radius: 15px;
   max-width: 75%;
@@ -45,7 +45,7 @@
   p {
     margin: 4px 0 0;
     font-size: 14px;
-    color: #777777;
+    color: var(--ion-color-texto-tarjetas);
   }
 }
 
@@ -53,7 +53,7 @@
   box-shadow: none;
 
   ion-toolbar {
-    --background: #ffffff;
+    --background: var(--ion-background-color);
     --border-width: 0;
     --padding-start: 8px;
     --padding-end: 8px;
@@ -77,11 +77,11 @@
   padding: 0 10px;
   height: 38px;
   border-radius: 25px;
-  background-color: #e5e5e5;
+  background-color: var(--ion-color-fondo-tarjetas);
 
   ion-icon {
     font-size: 19px;
-    color: #777777;
+    color: var(--ion-color-texto-tarjetas);
     flex-shrink: 0;
     cursor: pointer;
   }
@@ -93,11 +93,11 @@
     outline: none;
     background: transparent;
     font-size: 13px;
-    color: #111111;
+    color: var(--ion-color-texto-tarjetas);
   }
 
   input::placeholder {
-    color: #999999;
+    color: var(--ion-text-color);
   }
 }
 
@@ -119,11 +119,11 @@
 }
 
 .boton-microfono {
-  background-color: #e5e5e5;
-  color: #777777;
+  background-color: var(--ion-color-fondo-tarjetas);
+  color: var(--ion-color-texto-tarjetas);
 }
 
 .boton-enviar {
-  background-color: #111111;
-  color: #ffffff;
+  background-color: var(--ion-color-fondo-tarjetas);
+  color: var(--ion-color-texto-tarjetas);
 }

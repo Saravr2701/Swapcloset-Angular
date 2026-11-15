@@ -1,0 +1,238 @@
+.cabecera-editar {
+  box-shadow: none;
+
+  ion-toolbar {
+    --border-width: 0;
+    --background: var(--ion-background-color);
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --padding-top: 6px;
+    --padding-bottom: 10px;
+  }
+}
+
+.cabecera {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ion-text-color);
+  }
+}
+
+.contenido-editar {
+  --background: var(--ion-background-color);
+  --padding-start: 28px;
+  --padding-end: 28px;
+  --padding-top: 5px;
+  --padding-bottom: 30px;
+}
+
+.formulario-editar {
+  width: 100%;
+}
+
+.texto-intro {
+  color: var(--app-texto-secundario);
+  font-size: 13px;
+  margin: 5px 0 15px;
+}
+
+.zona-foto-editar {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 17px;
+  overflow: hidden;
+  background-color: var(--ion-color-fondo-tarjetas);
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+
+  img {
+    width: 280px;
+    height: 280px;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.cambiar-foto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.icono-foto {
+  font-size: 18px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+
+  label {
+    color: var(--ion-color-texto-tarjetas);
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    min-width: 0;
+    height: 25px;
+    padding: 0 0 3px;
+    border: none;
+    border-bottom: 1px solid var(--ion-color-texto-tarjetas);
+    border-radius: 0;
+    background: transparent;
+    outline: none;
+    color: var(--ion-color-texto-tarjetas);
+    font-family: inherit;
+    font-size: 13px;
+    box-sizing: border-box;
+  }
+
+  select {
+    appearance: none;
+    color-scheme: inherit;
+  }
+
+  select option {
+    background-color: var(--ion-background-color);
+    color: var(--ion-text-color);
+  }
+}
+
+.campo-nombre {
+  margin-top: 22px;
+}
+
+.campos-fila {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.tipo-anuncio {
+  margin-top: 25px;
+
+  label {
+    display: block;
+    color: var(--ion-color-texto-tarjetas);
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+}
+
+.opciones-anuncio {
+  display: flex;
+  gap: 15px;
+
+  span {
+    width: 110px;
+    max-width: 50%;
+    padding: 6px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: var(--ion-color-fondo-tarjetas);
+    color: var(--ion-color-texto-tarjetas);
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  span.activo {
+    background-color: var(--app-acento);
+    color: #ffffff;
+  }
+}
+
+.disponibilidad {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+
+  label {
+    color: var(--ion-color-texto-tarjetas);
+    font-size: 14px;
+  }
+
+  span {
+    background-color: var(--ion-color-boton-verde);
+    color: var(--ion-color-texto-boton-verde);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+
+    &.no-disponible {
+      background-color: #f8e2e2;
+      color: #bd4545;
+    }
+  }
+}
+
+.campo-descripcion {
+  margin-top: 25px;
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 5px;
+    resize: none;
+    border: 1px solid var(--app-borde);
+    border-radius: 10px;
+    background-color: var(--app-fondo-input);
+    color: var(--ion-text-color);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+  }
+
+  textarea::placeholder {
+    color: var(--app-texto-secundario);
+  }
+}
+
+.acciones-edicion {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 12px;
+  margin-top: 30px;
+
+  button {
+    min-height: 42px;
+    border: none;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+  }
+}
+
+.boton-cancelar {
+  background-color: var(--ion-color-boton-rojo);
+  color: var(--ion-color-texto-boton-rojo);
+}
+
+.boton-guardar {
+  background-color: var(--ion-color-boton-verde);
+  color: var(--ion-color-texto-boton-verde);
+}

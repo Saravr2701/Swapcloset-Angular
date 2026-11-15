@@ -1,10 +1,14 @@
 ion-tab-bar {
-  --background: #ffffff;
-  --border: 1px solid #e0e0e0;
-  --color-selected: #d97757; /* Cambia el color de la pestaña seleccionada */
+  --background: var(--ion-background-color);
+  --border: 1px solid var(--ion-color-bordes);
+  --color-selected: var(--app-acento); /* Cambia el color de la pestaña seleccionada */
 }
 
 ion-tab-button.boton-atras {
-  --color: #d97757;
-  --color-selected: #d97757;
+  --color: var(--app-acento);
+  --color-selected: var(--app-acento);
+}
+
+ion-tab-button {
+  --color: var(--ion-color-iconos);
 }

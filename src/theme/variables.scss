@@ -1,69 +1,100 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
 :root {
+  color-scheme: light;
+
+  --ion-color-fondo-tarjetas: #f5f5f5;
+  --ion-color-fondo-oscuro-tarjetas: #ececec;
+  --ion-color-texto-tarjetas: #2e2e2e;
+  --ion-color-texto-claro: #6e6e6e;
+  --ion-color-iconos: #111111;
+  --ion-color-danger: #cc2d22;
+  --ion-color-danger-fondo: #fde6e5;
+  --ion-color-fondo-categorias: #ffffff;
+  --ion-color-input: #e15f5f;
+  --ion-color-bordes: #e0e0e0;
+  --ion-color-texto-boton-verde: #39a65a;
+  --ion-color-boton-verde: #e2f3e5;
+  --ion-color-texto-boton-rojo: #fd2424;
+  --ion-color-boton-rojo: #f1dbdb;
+  --ion-color-boton-recordatorio: #fff3c4;
+  --ion-color-texto-boton-recordatorio: #b88600;
+
+  --ion-tam-texto-tarjetas: 13px;
 
   --ion-background-color: #ffffff;
-
-  --ion-text-color: #000000;
-
-  --ion-color-primary: #0b6e79;
-  --ion-color-primary-rgb: 11, 110, 121;
+  --ion-background-color-rgb: 255, 255, 255;
+  --ion-text-color: #111111;
+  --ion-text-color-rgb: 17, 17, 17;
+  --ion-toolbar-background: #ffffff;
+  --ion-item-background: #ffffff;
+  --ion-tab-bar-background: #ffffff;
+  --ion-color-primary: #d97757;
+  --ion-color-primary-rgb: 217, 119, 87;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #0a616a;
-  --ion-color-primary-tint: #237d86;
-  --ion-color-secondary: #2a9d8f;
-  --ion-color-secondary-rgb: 42, 157, 143;
-  --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #258a7e;
-  --ion-color-secondary-tint: #3fa79a;
-  --ion-color-tertiary: #f2a65a;
-  --ion-color-tertiary-rgb: 242, 166, 90;
-  --ion-color-tertiary-contrast: #000000;
-  --ion-color-tertiary-contrast-rgb: 0, 0, 0;
-  --ion-color-tertiary-shade: #d5924f;
-  --ion-color-tertiary-tint: #f3af6b;
-  --ion-color-success: #2f9e6b;
-  --ion-color-success-rgb: 47, 158, 107;
-  --ion-color-success-contrast: #ffffff;
-  --ion-color-success-contrast-rgb: 255, 255, 255;
-  --ion-color-success-shade: #298b5e;
-  --ion-color-success-tint: #44a87a;
-  --ion-color-warning: #d98a1a;
-  --ion-color-warning-rgb: 217, 138, 26;
-  --ion-color-warning-contrast: #000000;
-  --ion-color-warning-contrast-rgb: 0, 0, 0;
-  --ion-color-warning-shade: #bf7917;
-  --ion-color-warning-tint: #dd9531;
-  --ion-color-danger: #d6534a;
-  --ion-color-danger-rgb: 214, 83, 74;
-  --ion-color-danger-contrast: #ffffff;
-  --ion-color-danger-contrast-rgb: 255, 255, 255;
-  --ion-color-danger-shade: #bc4941;
-  --ion-color-danger-tint: #da635c;
-  --ion-color-medium: #6b7c86;
-  --ion-color-medium-rgb: 107, 124, 134;
-  --ion-color-medium-contrast: #ffffff;
-  --ion-color-medium-contrast-rgb: 255, 255, 255;
-  --ion-color-medium-shade: #5e6d76;
-  --ion-color-medium-tint: #7a8992;
-
-
-  /* ── Variables propias de AquaPedia ─────────── */
-
+  --ion-color-primary-shade: #bf694c;
+  --ion-color-primary-tint: #dc866b;
   --app-superficie: #ffffff;
-  --app-borde: #e3e9e8;
-  --app-radio: 16px;
-  --app-sombra: 0 1px 2px rgba(14, 34, 48, .05), 0 4px 14px rgba(14, 34, 48, .07);
-
+  --app-superficie-elevada: #ffffff;
+  --app-borde: #dedede;
+  --app-fondo-control: #dedede;
+  --app-fondo-input: #f7f7f7;
+  --app-texto-secundario: #777777;
+  --app-acento: #d97757;
+  --app-boton: #111111;
+  --app-boton-texto: #ffffff;
+  --app-boton-hover: #444444;
+  --app-campo-chat: #e5e5e5;
+  --app-aviso-fondo: #fff5f5;
+  --app-aviso-borde: #f2b5b5;
+  --app-aviso-texto: #b53232;
 }
 
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
---ion-background-color: black;
+:root.ion-palette-dark {
+  color-scheme: dark;
 
---ion-text-color: white;
+  --ion-color-fondo-tarjetas: #37383a;
+  --ion-color-fondo-oscuro-tarjetas: #303438;
+  --ion-color-fondo-categorias: #202326;
+  --ion-color-texto-tarjetas: #f5f2ed;
+  --ion-color-texto-claro: #b8b7b3;
+  --ion-color-iconos: #e5dfd8;
+  --ion-color-danger: #e1a8a4;
+  --ion-color-danger-fondo: #632d2d;
+  --ion-color-input: #d99478;
+  --ion-tam-texto-tarjetas: 13px;
+  --ion-background-color: #29292b;
+  --ion-background-color-rgb: 21, 23, 25;
+  --ion-text-color: #ececec;
+  --ion-color-bordes: #777777;
+  --ion-color-texto-boton-verde: #9dd3ab;
+  --ion-color-boton-verde: #395c3f;
+  --ion-color-texto-boton-rojo: #e1a8a4;
+  --ion-color-boton-rojo: #632d2d;
+  --ion-color-boton-recordatorio: #e4dbab;
+  --ion-color-texto-boton-recordatorio: #ac8420;
+
+  --ion-text-color-rgb: 245, 242, 237;
+  --ion-toolbar-background: #151719;
+  --ion-item-background: #24272a;
+  --ion-tab-bar-background: #1d2023;
+  --ion-color-primary: #d99478;
+  --ion-color-primary-rgb: 217, 148, 120;
+  --ion-color-primary-contrast: #151719;
+  --ion-color-primary-contrast-rgb: 21, 23, 25;
+  --ion-color-primary-shade: #bf836a;
+  --ion-color-primary-tint: #dda18a;
+  --app-superficie: #24272a;
+  --app-superficie-elevada: #303438;
+  --app-borde: #42464b;
+  --app-fondo-control: #34383c;
+  --app-fondo-input: #292d30;
+  --app-texto-secundario: #b8b7b3;
+  --app-acento: #b87b62;
+  --app-boton: #3c4247;
+  --app-boton-texto: #ffffff;
+  --app-boton-hover: #50575d;
+  --app-campo-chat: #303438;
+  --app-aviso-fondo: #392629;
+  --app-aviso-borde: #754448;
+  --app-aviso-texto: #f1a29e;
 }
-}*/

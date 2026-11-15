@@ -45,11 +45,13 @@
     <ion-tab-button
       tab="perfil"
       [class.boton-atras]="router.url.startsWith('/tabs/ajustes') ||
-                            router.url.startsWith('/tabs/recordatorios')">
+                            router.url.startsWith('/tabs/recordatorios') ||
+                            router.url.startsWith('/tabs/tarjetaseditarprendas')">
 
       <ion-icon
         [name]="router.url.startsWith('/tabs/ajustes') ||
-                router.url.startsWith('/tabs/recordatorios')
+                router.url.startsWith('/tabs/recordatorios') ||
+                router.url.startsWith('/tabs/tarjetaseditarprendas')
             ? 'arrow-back-outline'
             : 'person-outline'">
       </ion-icon>
@@ -57,7 +59,8 @@
       <ion-label>
         {{
           router.url.startsWith('/tabs/ajustes') ||
-          router.url.startsWith('/tabs/recordatorios')
+          router.url.startsWith('/tabs/recordatorios') ||
+          router.url.startsWith('/tabs/tarjetaseditarprendas')
             ? 'Atrás'
             : 'Perfil'
         }}

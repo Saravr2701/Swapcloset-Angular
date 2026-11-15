@@ -11,5 +11,7 @@ import {addIcons} from "ionicons";
 export class AppComponent {
   constructor() {
     addIcons({pulseOutline, personOutline, water, chatbubblesOutline, duplicateOutline, homeOutline });
+    const oscuro = localStorage.getItem('modoOscuro') === 'true';
+    document.documentElement.classList.toggle('ion-palette-dark', oscuro);
   }
 }

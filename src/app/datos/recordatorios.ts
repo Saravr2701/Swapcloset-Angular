@@ -7,7 +7,7 @@ export interface Recordatorios {
   imagenDevolucion?: string;
   fechaInicio?: string;
   fechaFin?: string;
-  nombre?: string;
+  nombre: string;
   estado?: 'Pendiente' | 'Aceptado' | 'Rechazado' | 'Devuelta';
   recibido?: boolean;
 }
@@ -15,6 +15,7 @@ export interface Recordatorios {
 export const RECORDATORIOS: Recordatorios[] = [
   {
     id: 1,
+    nombre: 'Laura P.',
     etiqueta: "Intercambio",
     fechaInicio: "12/11",
     fechaFin: "26/11",
@@ -24,6 +25,7 @@ export const RECORDATORIOS: Recordatorios[] = [
   },
   {
     id: 3,
+    nombre: 'Marta L.',
     etiqueta: "Préstamo",
     fechaInicio: "16/10",
     fechaFin: "20/10",
@@ -32,6 +34,7 @@ export const RECORDATORIOS: Recordatorios[] = [
   },
   {
     id: 4,
+    nombre: 'Lorena H.',
     etiqueta: "Devolución",
     descripcion: "Debes devolver",
     estado: 'Pendiente',
@@ -40,6 +43,7 @@ export const RECORDATORIOS: Recordatorios[] = [
   },
   {
     id: 5,
+    nombre: 'Álvaro G.',
     etiqueta: 'Devolución',
     descripcion: "Te deben devolver",
     estado: 'Pendiente',

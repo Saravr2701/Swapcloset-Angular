@@ -3,7 +3,7 @@
 
   ion-toolbar {
     --border-width: 0;
-    --background: #ffffff;
+    --background: var(--ion-background-color);
     --padding-start: 12px;
     --padding-end: 12px;
     --padding-top: 6px;
@@ -12,7 +12,7 @@
 }
 
 .contenido-anadir {
-  --background: #ffffff;
+  --background: var(--ion-background-color);
   --padding-start: 28px;
   --padding-end: 28px;
   --padding-top: 5px;
@@ -29,7 +29,7 @@
   justify-content: center;
   width: 100%;
   height: 260px;
-  background-color: #efefef;
+  background-color: var(--ion-color-fondo-tarjetas);
   border: 1px dashed #aaaaaa;
   border-radius: 17px;
   overflow: hidden;
@@ -50,23 +50,23 @@
     justify-content: center;
     width: 30px;
     height: 30px;
-    background-color: #ffffff;
+    background-color: var(--ion-background-color);
     border-radius: 50%;
 
     ion-icon {
       font-size: 17px;
-      color: #111111;
+      color: var(--ion-color-texto-tarjetas);
     }
   }
 
   p {
-    color: #111111;
+    color: var(--ion-color-texto-tarjetas);
     font-size: 14px;
     margin: 0;
   }
 
   span {
-    color: #999999;
+    color: var(--ion-color-texto-tarjetas);
     font-size: 12px;
   }
 }
@@ -83,7 +83,7 @@
   min-width: 0;
 
   label {
-    color: #555555;
+    color: var(--ion-color-texto-tarjetas);
     font-size: 15px;
     margin-bottom: 3px;
   }
@@ -95,28 +95,45 @@
     height: 20px;
     padding: 0 0 3px;
     border: none;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid var(--ion-color-texto-tarjetas);
     border-radius: 0;
     background: transparent;
     outline: none;
-    color: #333333;
+    color: var(--ion-color-texto-tarjetas);
     font-family: inherit;
     font-size: 13px;
     box-sizing: border-box;
   }
 
   input::placeholder {
-    color: #999999;
+    color: var(--ion-color-texto-tarjetas);
     opacity: 1;
   }
 
+
   select {
     appearance: none;
-    color: #999999;
+    color: var(--ion-color-texto-claro);
+    color-scheme: inherit;
+    background-color: transparent;
   }
 
   select:valid {
-    color: #333333;
+    color: var(--ion-color-texto-tarjetas);
+  }
+
+  select option {
+    background-color: var(--ion-background-color);
+    color: var(--ion-text-color);
+  }
+
+  select option:checked {
+    background-color: var(--ion-color-fondo-tarjetas);
+    color: var(--ion-color-texto-tarjetas);
+  }
+
+  select option:disabled {
+    color: var(--ion-color-texto-claro);
   }
 }
 
@@ -136,7 +153,8 @@
 
   label {
     display: block;
-    color: #555555;
+    background-color: var(--ion-background-color);
+    color: var(--ion-color-texto-tarjetas);
     font-size: 15px;
     margin-bottom: 5px;
   }
@@ -152,8 +170,8 @@
     height: 24px;
     border: none;
     border-radius: 20px;
-    background-color: #dedede;
-    color: #111111;
+    background-color: var(--ion-color-fondo-tarjetas);
+    color: var(--ion-color-texto-tarjetas);
     font-family: inherit;
     font-size: 13px;
     cursor: pointer;
@@ -176,8 +194,8 @@
 }
 
 .boton-publicar {
-  background-color: #dedede;
-  color: #111111;
+  background-color: var(--ion-color-fondo-tarjetas);
+  color: var(--ion-color-texto-tarjetas);
   border: none;
   border-radius: 20px;
   padding: 8px 25px;

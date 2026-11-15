@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {IonContent, IonHeader, IonToolbar} from '@ionic/angular';
-import { TarjetaschatsPage } from '../../componentes/tarjetaschats/tarjetaschats.page';
+import { TarjetaschatsPage } from '../tarjetaschats/tarjetaschats.page';
 import { CHATS } from '../../datos/mensajeschats';
 
 @Component({

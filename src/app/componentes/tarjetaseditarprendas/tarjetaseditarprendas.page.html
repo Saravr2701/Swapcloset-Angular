@@ -1,0 +1,113 @@
+<ion-header [translucent]="false" class="cabecera-editar">
+  <ion-toolbar>
+    <div class="cabecera">
+      <h1>Editar prenda</h1>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="contenido-editar">
+  @if (prenda; as articulo) {
+    <div class="formulario-editar">
+      <p class="texto-intro">Modifica la información de tu prenda</p>
+      <label class="zona-foto-editar" for="foto-editar">
+        <img [src]="articulo.imagen" [alt]="articulo.nombre">
+        <div class="cambiar-foto">
+          <span class="icono-foto">✎</span>
+          <span>Cambiar fotografía</span>
+        </div>
+
+        <input
+          type="file"
+          id="foto-editar"
+          accept="image/*"
+          hidden>
+      </label>
+
+      <div class="campo campo-nombre">
+        <label>Nombre del artículo</label>
+        <input type="text" [value]="articulo.nombre || ''" placeholder="Nombre de la prenda">
+      </div>
+
+      <div class="campos-fila">
+        <div class="campo">
+          <label>Talla</label>
+          <select [value]="articulo.talla || ''">
+            <option value="" disabled>Selecciona...</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label>Categoría</label>
+          <select [value]="articulo.categoria || ''">
+            <option value="" disabled>Selecciona...</option>
+            <option value="Chaqueta">Chaqueta</option>
+            <option value="Camisetas">Camisetas</option>
+            <option value="Pantalones">Pantalones</option>
+            <option value="Vestidos">Vestidos</option>
+            <option value="Bolsos">Bolsos</option>
+            <option value="Accesorios">Accesorios</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label>Tienda</label>
+          <select [value]="articulo.marca || ''">
+            <option value="" disabled>Selecciona...</option>
+            <option value="Zara">Zara</option>
+            <option value="Bershka">Bershka</option>
+            <option value="H&M">H&M</option>
+            <option value="Shein">Shein</option>
+            <option value="Stradivarius">Stradivarius</option>
+            <option value="Otra">Otra</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="tipo-anuncio">
+        <label>Tipo de anuncio</label>
+
+        <div class="opciones-anuncio">
+          <span
+            [class.activo]="tipoSeleccionado === 'Préstamo'"
+            (click)="tipoSeleccionado = 'Préstamo'">
+            Préstamo
+          </span>
+
+          <span
+            [class.activo]="tipoSeleccionado === 'Intercambio'"
+            (click)="tipoSeleccionado = 'Intercambio'">
+            Intercambio
+          </span>
+        </div>
+      </div>
+
+      <div class="disponibilidad">
+        <label>Disponibilidad de la prenda</label>
+        <span [class.no-disponible]="!articulo.disponible">
+          {{ articulo.disponible ? 'Disponible' : 'No disponible' }}
+        </span>
+      </div>
+
+      <div class="campo campo-descripcion">
+        <label>Descripción del producto</label>
+        <textarea rows="4" [value]="articulo.descripcion || ''" placeholder="Describe la prenda, su estado, usos aproximados..."></textarea>
+      </div>
+
+      <div class="acciones-edicion">
+        <button type="button" class="boton-cancelar" routerLink="/tabs/perfil">
+          Cancelar
+        </button>
+
+        <button type="button" class="boton-guardar" routerLink="/tabs/perfil">
+          Guardar cambios
+        </button>
+      </div>
+    </div>
+  }
+</ion-content>

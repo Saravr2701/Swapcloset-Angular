@@ -1,53 +1,174 @@
 <ion-header [translucent]="false" class="cabecera-perfil">
   <ion-toolbar>
     <div class="cabecera">
-      <h1>Tu perfil</h1>
-      <div class="iconos-cabecera">
-        <ion-button fill="clear" routerLink="/tabs/ajustes">
-          <ion-icon name="settings-outline"></ion-icon>
-        </ion-button>
-
-        <ion-button fill="clear" routerLink="/tabs/recordatorios">
-          <ion-icon name="notifications-outline"></ion-icon>
-        </ion-button>
-      </div>
+      <h1>Recordatorios</h1>
     </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="lista-recordatorios">
-    @for (recordatorio of recordatorios; track recordatorio.id) {
 
-      <div class="tarjeta-recordatorio">
-        <h3>{{ recordatorio.etiqueta }}</h3>
+    <section class="seccion-recordatorios">
+      <h2>Te han solicitado</h2>
 
-        @if(recordatorio.imagenDevolucion){
-          <img [src]="recordatorio.imagenDevolucion" alt="Imagen prenda devuelta">
+      <h3>Intercambios</h3>
+
+      @for (recordatorio of recordatorios; track recordatorio.id) {
+        @if (recordatorio.etiqueta === 'Intercambio') {
+          <div class="solicitud">
+            <div class="prendas-intercambio">
+              <div class="prenda-solicitud">
+                <img [src]="recordatorio.imagenIntercambio"
+                     alt="Prenda ofrecida">
+
+                <span class="fecha">
+                  {{ recordatorio.fechaInicio }}
+                </span>
+              </div>
+              <span class="flecha">⇄</span>
+
+              <div class="prenda-solicitud">
+                <img [src]="recordatorio.imagenPrestamo"
+                     alt="Prenda solicitada">
+                <span class="fecha">
+                  {{ recordatorio.fechaFin }}
+                </span>
+              </div>
+            </div>
+
+            <div class="botones-solicitud">
+              @if (recordatorio.estado === 'Pendiente') {
+                <button class="aceptar" (click)="recordatorio.estado = 'Aceptado'">
+                  ✓
+                </button>
+
+                <button class="rechazar" (click)="recordatorio.estado = 'Rechazado'">
+                  ✕
+                </button>
+              } @else {
+                <span class="estado-solicitud">
+                  {{ recordatorio.estado }}
+                </span>
+              }
+            </div>
+          </div>
         }
+      }
+      <h3>Préstamos</h3>
 
-        @if(recordatorio.imagenIntercambio){
-          <img [src]="recordatorio.imagenIntercambio" alt="Imagen prenda intercambiada">
+      @for (recordatorio of recordatorios; track recordatorio.id) {
+        @if (recordatorio.etiqueta === 'Préstamo') {
+          <div class="solicitud">
+            <div class="contenido-prestamo">
+              <img
+                [src]="recordatorio.imagenPrestamo || recordatorio.imagenIntercambio"
+                alt="Prenda del préstamo">
+
+              <div class="fechas-prestamo">
+                <span class="fecha">
+                  {{ recordatorio.fechaInicio }}
+                </span>
+
+                <span class="fecha">
+                  {{ recordatorio.fechaFin }}
+                </span>
+              </div>
+            </div>
+            <div class="botones-solicitud">
+              @if (recordatorio.estado === 'Pendiente') {
+                <button class="aceptar" (click)="recordatorio.estado = 'Aceptado'">
+                  ✓
+                </button>
+
+                <button class="rechazar" (click)="recordatorio.estado = 'Rechazado'">
+                  ✕
+                </button>
+              } @else {
+                <span class="estado-solicitud">
+                  {{ recordatorio.estado }}
+                </span>
+              }
+            </div>
+          </div>
         }
+      }
+    </section>
 
-        @if(recordatorio.imagenPrestamo){
-          <img [src]="recordatorio.imagenPrestamo" alt="Imagen prenda prestada">
+    <section class="seccion-recordatorios">
+      <h2>Debes devolver</h2>
+
+      @for (recordatorio of recordatorios; track recordatorio.id) {
+        @if (recordatorio.descripcion === 'Debes devolver') {
+
+          <div class="tarjeta-devolucion">
+
+            <div class="imagen-devolucion">
+              <img [src]="recordatorio.imagenDevolucion"
+                   alt="Prenda que debes devolver">
+            </div>
+
+            <div class="informacion-devolucion">
+              <p>
+                Tienes que devolverle esta prenda a {{ recordatorio.nombre }} antes del {{ recordatorio.fechaFin }}
+              </p>
+
+              @if (recordatorio.estado === 'Devuelta') {
+                <span class="recepcion-confirmada">
+                  Envío confirmado
+                </span>
+              } @else {
+                <button class="boton-recibido" (click)="recordatorio.estado = 'Devuelta'">
+                  Marcar como enviado
+                </button>
+              }
+
+              <p class="advertencia">
+                Recuerda realizar la devolución a tiempo para recuperar tu depósito
+              </p>
+            </div>
+          </div>
         }
+      }
+    </section>
 
-        @if (recordatorio.descripcion) {
-          <p>{{ recordatorio.descripcion }}</p>
+    <section class="seccion-recordatorios">
+
+      <h2>Te deben devolver</h2>
+
+      @for (recordatorio of recordatorios; track recordatorio.id) {
+        @if (recordatorio.descripcion === 'Te deben devolver') {
+
+          <div class="tarjeta-devolucion">
+
+            <div class="imagen-devolucion">
+              <img [src]="recordatorio.imagenDevolucion"
+                   alt="Prenda pendiente de recibir">
+            </div>
+
+            <div class="informacion-devolucion">
+
+              <p>
+                {{ recordatorio.nombre }} tiene que devolverte esta prenda antes del {{ recordatorio.fechaFin }}
+              </p>
+
+              @if (recordatorio.estado === 'Devuelta') {
+                <span class="recepcion-confirmada">
+                  Recepción confirmada
+                </span>
+              } @else {
+                <button class="boton-recibido" (click)="recordatorio.estado = 'Devuelta'">
+                  Marcar como recibido
+                </button>
+              }
+
+              <p class="advertencia">
+                Confirma la recepción cuando te hayan devuelto la prenda
+              </p>
+            </div>
+          </div>
         }
-
-        @if (recordatorio.fechaInicio) {
-          <p>Fecha de inicio: {{ recordatorio.fechaInicio }}</p>
-        }
-
-        @if (recordatorio.fechaFin) {
-          <p>Fecha de fin: {{ recordatorio.fechaFin }}</p>
-        }
-      </div>
-
-    }
+      }
+    </section>
   </div>
 </ion-content>
-

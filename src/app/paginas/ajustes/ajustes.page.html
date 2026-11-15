@@ -6,15 +6,33 @@
 
 <ion-content [fullscreen]="true" class="contenido-ajustes">
   <div class="contenedor-ajustes">
+    <p class="titulo-grupo">Preferencias</p>
+    <ion-item class="opcion-tema" lines="none">
+      <ion-icon slot="start" name="moon-outline"></ion-icon>
+      <ion-toggle [checked]="oscuro" (ionChange)="cambiarTema($event)">Modo oscuro</ion-toggle>
+    </ion-item>
 
-    <ion-button
-      color="danger"
-      fill="outline"
-      expand="block"
-      routerLink="/login"
-      routerDirection="root">
-      Cerrar sesión
-    </ion-button>
-
+    <ion-item class="opcion-tema" lines="none">
+      <ion-icon slot="start" name="notifications-outline"></ion-icon>
+      <ion-toggle>Activar notificaciones</ion-toggle>
+    </ion-item>
   </div>
+
+  <div class="contenedor-ajustes">
+    <p class="titulo-grupo">Información</p>
+    <ion-list [inset]="true">
+      <ion-item [button]="true" [detail]="true">
+        <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+        <ion-label>Acerca de SwapCloset</ion-label>
+      </ion-item>
+      <ion-item [button]="true" [detail]="true">
+        <ion-icon slot="start" name="images-outline"></ion-icon>
+        <ion-label>Créditos de las fotografías</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-button color="danger" fill="outline" routerLink="/login" routerDirection="root">
+    Cerrar sesión
+  </ion-button>
 </ion-content>

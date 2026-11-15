@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { MIS_PRENDAS } from '../../datos/misprendas';
 
-import {
-  IonContent,
-  IonHeader,
-  IonToolbar,
-  IonIcon,
-  IonButton
-} from '@ionic/angular';
+import {IonContent, IonHeader, IonToolbar, IonIcon, IonButton} from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
 import {locationOutline, star, settingsOutline, notificationsOutline} from 'ionicons/icons';
@@ -26,11 +22,10 @@ import {locationOutline, star, settingsOutline, notificationsOutline} from 'ioni
     IonToolbar,
     IonIcon,
     IonButton,
-
   ]
 })
 
-//No separo los datos del ts principal porque solo es un perfil y se eliminará al conectar con la BD
+//No separo los datos del ts principal (como las prendas o lso recordatorios) porque solo es un perfil y se eliminará al conectar con la BD
 export class PerfilPage {
 
   datosPerfil = {
@@ -55,40 +50,9 @@ export class PerfilPage {
     ]
   };
 
-  tusPrendas = [
-    {
-      id: 1,
-      nombre: 'Chaqueta vaquera',
-      imagen: 'assets/chaquetanegra.png',
-      tipo: 'Intercambio',
-      disponible: false
-    },
-    {
-      id: 2,
-      nombre: 'Conjunto azul',
-      imagen: 'assets/conjuntoazul.png',
-      tipo: 'Préstamo',
-      disponible: true,
-      fechaDisponible: '16/10'
-    },
-    {
-      id: 4,
-      nombre: 'Top de lentejuelas',
-      imagen: 'assets/toplentejuelas.png',
-      tipo: 'Intercambio',
-      disponible: true
-    },
-    {
-      id: 5,
-      nombre: 'Bolso marron de cuerdas',
-      imagen: 'assets/bolsocuerdasmarron.png',
-      tipo: 'Intercambio',
-      disponible: false,
-      fechaDisponible: '09/10'
-    }
-  ];
+  tusPrendas = MIS_PRENDAS;
 
-  tusIntercambios = [
+  tusPrendasTemporales = [
     {
       id: 1,
       imagenEntregada: 'assets/bolsocuerdasmarron.png',
@@ -98,19 +62,34 @@ export class PerfilPage {
       tipo: 'Intercambio',
       recibida: true,
       devuelta: true,
+      recordatorio: false,
     },
     {
       id: 2,
-      imagen: 'assets/chaquetanegra.png',
+      imagenRecibida: 'assets/conjunto.png',
       tipo: 'Préstamo',
       fechaInicio: '12/11',
       fechaFin: '16/11',
       devuelta: false,
+      recordatorio: false,
     }
   ];
 
-  constructor() {
+  constructor(private router: Router) {
     addIcons({ locationOutline, star, settingsOutline, notificationsOutline });
   }
 
+  get hayRecordatorios() {
+    return this.tusPrendasTemporales.some(
+      prenda => prenda.recordatorio
+    );
+  }
+
+  abrirRecordatorio(prenda: any) {
+    if (prenda.recordatorio) {
+      this.router.navigate(['/tabs/recordatorios']);
+    } else {
+      prenda.recordatorio = true;
+    }
+  }
 }

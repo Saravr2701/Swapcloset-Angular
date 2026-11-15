@@ -45,7 +45,7 @@ export const routes: Routes = [
       },
       {
         path: 'chats',
-        loadComponent: () => import('./paginas/chats/chats.page').then( m => m.ChatsPage)
+        loadComponent: () => import('./componentes/chats/chats.page').then(m => m.ChatsPage)
       },
       {
         path: 'conversacion/:id',
@@ -89,6 +89,10 @@ export const routes: Routes = [
         path: 'solicitarprenda/:id',
         loadComponent: () => import('./componentes/solicitarprenda/solicitarprenda.page').then( m => m.SolicitarprendaPage)
       },
+      {
+        path: 'tarjetaseditarprendas/:id',
+        loadComponent: () => import('./componentes/tarjetaseditarprendas/tarjetaseditarprendas.page').then( m => m.TarjetaseditarprendasPage)
+      },
     ]
   },
   {
@@ -102,18 +106,6 @@ export const routes: Routes = [
   {
     path: 'tarjetaschats',
     loadComponent: () => import('./componentes/tarjetaschats/tarjetaschats.page').then( m => m.TarjetaschatsPage)
-  },
-  {
-    path: 'tarjetastusprendas',
-    loadComponent: () => import('./componentes/tarjetastusprendas/tarjetastusprendas.page').then( m => m.TarjetastusprendasPage)
-  },
-  {
-    path: 'tarjetastusintercambios',
-    loadComponent: () => import('./componentes/tarjetastusintercambios/tarjetastusintercambios.page').then( m => m.TarjetastusintercambiosPage)
-  },
-  {
-    path: 'tarjetastusprestamos',
-    loadComponent: () => import('./componentes/tarjetastusprestamos/tarjetastusprestamos.page').then( m => m.TarjetastusprestamosPage)
   },
   {
     path: 'conversacion',
