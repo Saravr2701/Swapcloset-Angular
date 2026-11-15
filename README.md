@@ -4,13 +4,12 @@
 
 Este repositorio contiene el **frontend** de la aplicación, desarrollado con Ionic y Angular.
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **Ionic 9:** componentes e interfaz adaptada a dispositivos móviles.
 - **Angular 22:** estructura, componentes y navegación de la aplicación.
 - **TypeScript:** lógica del frontend.
 - **HTML y SCSS:** estructura y estilos de las pantallas.
-- **Ionicons:** iconografía.
 - **Capacitor:** configuración para una futura integración móvil.
 
 ## Funcionalidades y pantallas
