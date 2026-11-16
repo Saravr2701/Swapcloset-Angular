@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {IonButton, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar} from '@ionic/angular';
+import { IonContent, IonHeader, IonIcon, IonToolbar} from '@ionic/angular';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import { CATALOGO_PRENDAS, Prenda } from '../../datos/catalogoprendas';
 import { addIcons } from 'ionicons';
