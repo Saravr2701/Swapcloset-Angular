@@ -447,3 +447,64 @@
   text-decoration: none;
   color: var(--ion-color-texto-tarjetas);
 }
+
+.boton-editar-perfil {
+  display: block;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--app-acento);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.quitar-estilo {
+  border: none;
+  background: transparent;
+  color: var(--ion-color-danger);
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 4px;
+  padding: 0 2px;
+  cursor: pointer;
+}
+
+/* Campos editables de las tallas */
+.caja-tallas input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 6px;
+  margin-bottom: 6px;
+  border: 1px solid var(--app-acento);
+  border-radius: 6px;
+  background: var(--ion-background-color);
+  color: var(--ion-text-color);
+  font-family: inherit;
+  font-size: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.lista-estilos {
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.quitar-estilo {
+  border: none;
+  background: transparent;
+  color: var(--ion-text-color);
+  font-size: 17px;
+  font-weight: bold;
+  padding: 0;
+  line-height: 1;
+  cursor: pointer;
+}

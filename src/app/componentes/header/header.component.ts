@@ -13,8 +13,8 @@ import { searchOutline, optionsOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.page.html',
-  styleUrls: ['./header.page.scss'],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
   standalone: true,
   imports: [
     CommonModule,
@@ -25,7 +25,7 @@ import { searchOutline, optionsOutline } from 'ionicons/icons';
     IonIcon
   ]
 })
-export class HeaderPage {
+export class HeaderComponent {
   saldo = SALDO;
 
   //variable que usaremos para controlar si el filtro esta activo o no

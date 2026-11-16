@@ -1,7 +1,7 @@
 export interface MiPrenda {
   id: number;
   nombre: string;
-  imagen: string;
+  imagen: string[];
   tipo: 'Intercambio' | 'Préstamo';
   disponible: boolean;
   talla?: string;
@@ -18,7 +18,7 @@ export const MIS_PRENDAS: MiPrenda[] = [
     categoria: 'Chaqueta',
     marca: 'Stradivarius',
     nombre: 'Chaqueta vaquera',
-    imagen: 'assets/chaquetanegra.png',
+    imagen: ['assets/chaquetanegra.png'],
     descripcion: '',
     tipo: 'Intercambio',
     disponible: false
@@ -29,7 +29,7 @@ export const MIS_PRENDAS: MiPrenda[] = [
     categoria: 'Camisetas',
     marca: 'Shein',
     nombre: 'Conjunto azul',
-    imagen: 'assets/conjuntoazul.png',
+    imagen: ['assets/conjuntoazul.png'],
     tipo: 'Préstamo',
     disponible: true,
     descripcion: 'Conjunto azul a estrenar, comprado hace 3 meses en Shein',
@@ -41,7 +41,7 @@ export const MIS_PRENDAS: MiPrenda[] = [
     marca: 'Bershka',
     categoria: 'Camisetas',
     nombre: 'Top de lentejuelas',
-    imagen: 'assets/toplentejuelas.png',
+    imagen: ['assets/toplentejuelas.png'],
     tipo: 'Intercambio',
     descripcion: '',
     disponible: true
@@ -52,7 +52,7 @@ export const MIS_PRENDAS: MiPrenda[] = [
     marca: 'Bershka',
     categoria: 'Bolsos',
     nombre: 'Bolso marron de cuerdas',
-    imagen: 'assets/bolsocuerdasmarron.png',
+    imagen: ['assets/bolsocuerdasmarron.png'],
     tipo: 'Intercambio',
     descripcion: '',
     disponible: false,

@@ -11,17 +11,13 @@
     <div class="formulario-editar">
       <p class="texto-intro">Modifica la información de tu prenda</p>
       <label class="zona-foto-editar" for="foto-editar">
-        <img [src]="articulo.imagen" [alt]="articulo.nombre">
+        <img [src]="articulo.imagen[0]" [alt]="articulo.nombre">
         <div class="cambiar-foto">
           <span class="icono-foto">✎</span>
           <span>Cambiar fotografía</span>
         </div>
 
-        <input
-          type="file"
-          id="foto-editar"
-          accept="image/*"
-          hidden>
+        <input type="file" id="foto-editar" accept="image/*" multiple hidden>
       </label>
 
       <div class="campo campo-nombre">

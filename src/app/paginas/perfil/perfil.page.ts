@@ -28,26 +28,17 @@ import {locationOutline, star, settingsOutline, notificationsOutline} from 'ioni
 //No separo los datos del ts principal (como las prendas o lso recordatorios) porque solo es un perfil y se eliminará al conectar con la BD
 export class PerfilPage {
 
+  editandoEstilos = false;
+  editandoTallas = false;
+
   datosPerfil = {
     nombre: 'Mariana L.',
     imagen: 'assets/mariana.jpg',
     ubicacion: 'Calle Calatrava, Sevilla',
     valoracion: 4.8,
     resenas: 24,
-
-    estilosFavoritos: [
-      'Accesorios',
-      'Casual',
-      'Zapatos',
-      'Streetwear'
-    ],
-
-    tallas: [
-      'Altura - 1,61',
-      'Zapatos - 38/39',
-      'Parte superior - S',
-      'Parte inferior - 40/M'
-    ]
+    estilosFavoritos: ['Accesorios', 'Casual', 'Zapatos', 'Streetwear'],
+    tallas: ['Altura - 1,61', 'Zapatos - 38/39', 'Parte superior - S', 'Parte inferior - 40/M']
   };
 
   tusPrendas = MIS_PRENDAS;

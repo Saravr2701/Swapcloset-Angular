@@ -12,6 +12,13 @@
 }
 
 .datos-vendedor {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
   display: flex;
   align-items: center;
   width: 100%;
@@ -19,18 +26,26 @@
   margin-bottom: 24px;
 }
 
+
 .avatar-vendedor {
   flex-shrink: 0;
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #ede5df;
-  color: #8b624f;
+  background: var(--ion-color-fondo-tarjetas);
+  color: var(--ion-color-texto-tarjetas);
   font-size: 13px;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 }
 
 .vendedor-textos {
@@ -65,12 +80,13 @@
 }
 
 .foto-grande {
+  position: relative;
   width: min(62%, 245px);
   aspect-ratio: 0.75;
-  margin: 0 auto 20px;
+  margin: 0 auto 12px;
   border-radius: 17px;
   overflow: hidden;
-  background: #f4f4f4;
+  background: var(--ion-color-fondo-tarjetas);
 
   img {
     width: 100%;
@@ -209,4 +225,76 @@
   a {
     color: #555555;
   }
+}
+
+.galeria-prenda {
+  margin-bottom: 20px;
+}
+
+.flecha-galeria {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.85);
+  color: #333333;
+
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.izquierda {
+  left: 8px;
+}
+
+.derecha {
+  right: 8px;
+}
+
+.miniaturas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.miniatura {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  border: 2px solid transparent;
+  border-radius: 9px;
+  overflow: hidden;
+  background: transparent;
+
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.miniatura.activa {
+  border-color: var(--app-acento);
+}
+
+.contador-fotos {
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: 11px;
+  color: var(--ion-color-texto-tarjetas);
 }

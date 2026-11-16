@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent } from '@ionic/angular';
 
-import { TarjetasprendasPage } from '../../componentes/tarjetasprendas/tarjetasprendas.page';
-import { HeaderPage } from '../../componentes/header/header.page';
+import { TarjetasprendasComponent } from '../../componentes/tarjetasprendas/tarjetasprendas.component';
+import { HeaderComponent } from '../../componentes/header/header.component';
 
 import { CATALOGO_PRENDAS } from '../../datos/catalogoprendas';
 
@@ -17,8 +17,8 @@ import { CATALOGO_PRENDAS } from '../../datos/catalogoprendas';
     IonContent,
     CommonModule,
     FormsModule,
-    TarjetasprendasPage,
-    HeaderPage
+    TarjetasprendasComponent,
+    HeaderComponent
   ]
 })
 export class IniciocalzadoPage {

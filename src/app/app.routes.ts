@@ -12,7 +12,7 @@ export const routes: Routes = [
   },
   {
     path: 'tabs',
-    loadComponent: () => import('./componentes/barranav/barranav.page').then((m) => m.BarranavPage),
+    loadComponent: () => import('./paginas/barranav/barranav.page').then((m) => m.BarranavPage),
     children: [
       {
         path: '',
@@ -45,7 +45,7 @@ export const routes: Routes = [
       },
       {
         path: 'chats',
-        loadComponent: () => import('./componentes/chats/chats.page').then(m => m.ChatsPage)
+        loadComponent: () => import('./paginas/chats/chats.page').then(m => m.ChatsPage)
       },
       {
         path: 'conversacion/:id',
@@ -57,7 +57,7 @@ export const routes: Routes = [
       },
       {
         path: 'barranav',
-        loadComponent: () => import('./componentes/barranav/barranav.page').then(m => m.BarranavPage)
+        loadComponent: () => import('./paginas/barranav/barranav.page').then(m => m.BarranavPage)
       },
       {
         path: 'ajustes',
@@ -82,30 +82,22 @@ export const routes: Routes = [
       {
         path: 'detalleprenda/:id',
         loadComponent: () =>
-          import('./componentes/detalleprenda/detalleprenda.page')
+          import('./paginas/detalleprenda/detalleprenda.page')
             .then(m => m.DetalleprendaPage)
       },
       {
         path: 'solicitarprenda/:id',
-        loadComponent: () => import('./componentes/solicitarprenda/solicitarprenda.page').then( m => m.SolicitarprendaPage)
+        loadComponent: () => import('./paginas/solicitarprenda/solicitarprenda.page').then(m => m.SolicitarprendaPage)
       },
       {
         path: 'tarjetaseditarprendas/:id',
-        loadComponent: () => import('./componentes/tarjetaseditarprendas/tarjetaseditarprendas.page').then( m => m.TarjetaseditarprendasPage)
+        loadComponent: () => import('./paginas/tarjetaseditarprendas/tarjetaseditarprendas.page').then(m => m.TarjetaseditarprendasPage)
+      },
+      {
+        path: 'perfilusuarios/:id',
+        loadComponent: () => import('./paginas/perfilusuarios/perfilusuarios.page').then( m => m.PerfilusuariosPage)
       },
     ]
-  },
-  {
-    path: 'tarjetasprendas',
-    loadComponent: () => import('./componentes/tarjetasprendas/tarjetasprendas.page').then( m => m.TarjetasprendasPage)
-  },
-  {
-    path: 'header',
-    loadComponent: () => import('./componentes/header/header.page').then( m => m.HeaderPage)
-  },
-  {
-    path: 'tarjetaschats',
-    loadComponent: () => import('./componentes/tarjetaschats/tarjetaschats.page').then( m => m.TarjetaschatsPage)
   },
   {
     path: 'conversacion',

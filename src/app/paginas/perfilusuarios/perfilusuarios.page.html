@@ -1,0 +1,84 @@
+<ion-content [fullscreen]="true" class="contenido-perfil">
+  @if (datosPerfil; as perfil) {
+    <div class="perfil">
+      <div class="informacion-usuario">
+        @if (perfil.imagen) {
+          <img
+            [src]="perfil.imagen"
+            [alt]="perfil.nombre"
+            class="foto-perfil">
+        } @else {
+          <div
+            class="foto-perfil"
+            style="display: grid; place-items: center; background: var(--ion-color-fondo-tarjetas); color: var(--ion-color-texto-tarjetas); font-size: 28px;">
+            {{ perfil.nombre.charAt(0) }}
+          </div>
+        }
+
+        <h2>{{ perfil.nombre }}</h2>
+        <div class="ubicacion">
+          <ion-icon name="location-outline"></ion-icon>
+          <span>{{ perfil.ubicacion }}</span>
+        </div>
+
+        <div class="valoracion">
+          <ion-icon name="star"></ion-icon>
+          <span>{{ perfil.valoracion }}</span>
+          <span class="resenas">
+            ({{ perfil.resenas }} reseñas)
+          </span>
+        </div>
+      </div>
+      <div class="detalles-perfil">
+
+        <div class="estilos">
+
+          <h3>Estilos favoritos</h3>
+          <div class="lista-estilos">
+            @for (estilo of perfil.estilosfavoritos; track estilo) {
+              <span>{{ estilo }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="tallas">
+          <h3>Tallas</h3>
+
+          <div class="caja-tallas">
+            @for (talla of perfil.tallas; track talla) {
+              <p>{{ talla }}</p>
+            }
+          </div>
+        </div>
+        <div class="tus-prendas">
+          <h3>Prendas de {{ perfil.nombre }}</h3>
+          @if (prendasVendedor.length > 0) {
+            <div class="rejilla-prendas">
+              @for (prenda of prendasVendedor; track prenda.id) {
+                <a
+                  class="tarjeta-prenda"
+                  [routerLink]="['/tabs/detalleprenda', prenda.id]">
+                  <div class="imagen-prenda">
+                    <img [src]="prenda.imagen[0]" [alt]="prenda.titulo">
+                    <span class="etiqueta-tipo">
+                      {{ prenda.etiqueta }}
+                    </span>
+                  </div>
+                  <p class="nombre-prenda">
+                    {{ prenda.titulo }}
+                  </p>
+                </a>
+              }
+            </div>
+          } @else {
+            <p>Este usuario todavía no tiene prendas publicadas.</p>
+          }
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div class="perfil">
+      <p>No se ha encontrado el perfil de este usuario.</p>
+    </div>
+  }
+</ion-content>

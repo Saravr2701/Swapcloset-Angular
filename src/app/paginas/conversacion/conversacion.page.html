@@ -1,15 +1,19 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <!-- Recorremos la conversación encontrada -->
   @for (chat of conversacion; track chat.id) {
+    <button
+      type="button"
+      class="datos-chat"
+      (click)="abrirPerfil(chat.nombre)">
 
-    <div class="datos-chat">
       <img [src]="chat.prenda" [alt]="chat.prendaSolicitada" class="foto-prenda">
+
       <div class="informacion-prenda">
         <h4>{{ chat.nombre }}</h4>
         <p>{{ chat.prendaSolicitada }}</p>
       </div>
+    </button>
 
-    </div>
     <div class="mensajes">
       @for (mensaje of chat.mensajes; track $index) {
         <div class="mensaje" [class.mio]="mensaje.mio">

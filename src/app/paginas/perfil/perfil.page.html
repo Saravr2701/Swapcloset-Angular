@@ -40,19 +40,62 @@
 
         <div class="lista-estilos">
           @for (estilo of datosPerfil.estilosFavoritos; track estilo) {
-            <span>{{ estilo }}</span>
+            <span>
+              @if (editandoEstilos) {
+                <button type="button" class="quitar-estilo" [attr.aria-label]="'Quitar ' + estilo">
+                  −
+                </button>
+              }
+              {{ estilo }}
+            </span>
           }
         </div>
+
+        @if (editandoEstilos) {
+          <button type="button" class="boton-editar-perfil">
+            + Añadir estilos
+          </button>
+
+          <button type="button" class="boton-editar-perfil" (click)="editandoEstilos = false">
+            Aplicar cambios
+          </button>
+        } @else {
+          <button type="button" class="boton-editar-perfil" (click)="editandoEstilos = true">
+            Modificar estilos
+          </button>
+        }
       </div>
 
       <div class="tallas">
         <h3>Tallas</h3>
 
         <div class="caja-tallas">
-          @for (talla of datosPerfil.tallas; track talla) {
-            <p>{{ talla }}</p>
+          @for (talla of datosPerfil.tallas; track $index) {
+
+            @if (editandoTallas) {
+              <input
+                type="text"
+                [value]="talla"
+                [attr.aria-label]="'Editar talla ' + ($index + 1)">
+            } @else {
+              <p>{{ talla }}</p>
+            }
+
           }
         </div>
+
+        @if (editandoTallas) {
+          <button type="button" class="boton-editar-perfil" (click)="editandoTallas = false">
+            Aplicar cambios
+          </button>
+        } @else {
+          <button
+            type="button"
+            class="boton-editar-perfil"
+            (click)="editandoTallas = true">
+            Modificar tallas
+          </button>
+        }
       </div>
 
       <div class="tus-prendas">

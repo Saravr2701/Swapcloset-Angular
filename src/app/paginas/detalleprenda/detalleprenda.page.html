@@ -1,0 +1,142 @@
+<app-header />
+
+<ion-content class="contenido-detalle">
+
+  @if (prenda; as articulo) {
+    <main class="detalle-prenda">
+      <button type="button" class="datos-vendedor" (click)="abrirPerfil(articulo.propietario.nombre)">
+        <div class="avatar-vendedor">
+          @if (perfilVendedor?.imagen; as foto) {
+            <img [src]="foto" [alt]="articulo.propietario.nombre">
+          } @else {
+            {{ articulo.propietario.iniciales }}
+          }
+        </div>
+
+        <div class="vendedor-textos">
+          <div class="nombre-vendedor">
+            {{ articulo.propietario.nombre }}
+          </div>
+
+          <div class="ubicacion-vendedor">
+            {{ articulo.propietario.ubicacion || 'Ubicación no indicada' }}
+          </div>
+        </div>
+
+        @if (articulo.propietario.valoracion !== undefined) {
+          <div class="valoracion-vendedor">
+            <ion-icon name="star"></ion-icon>
+
+            <span>
+              {{ articulo.propietario.valoracion }}
+              ({{ articulo.propietario.resenas }} reseñas)
+            </span>
+          </div>
+        }
+      </button>
+
+      <div class="galeria-prenda">
+        <div class="foto-grande">
+          <img
+            [src]="fotosPrenda[indiceFoto]"
+            [alt]="articulo.titulo">
+
+          @if (fotosPrenda.length > 1) {
+            <button
+              type="button"
+              class="flecha-galeria izquierda"
+              aria-label="Fotografía anterior"
+              (click)="cambiarFoto(-1)">
+              ‹
+            </button>
+
+            <button
+              type="button"
+              class="flecha-galeria derecha"
+              aria-label="Fotografía siguiente"
+              (click)="cambiarFoto(1)">
+              ›
+            </button>
+          }
+        </div>
+
+        @if (fotosPrenda.length > 1) {
+          <div class="miniaturas">
+            @for (foto of fotosPrenda; track $index) {
+              <button
+                type="button"
+                class="miniatura"
+                [class.activa]="indiceFoto === $index"
+                [attr.aria-label]="'Ver fotografía ' + ($index + 1)"
+                (click)="seleccionarFoto($index)">
+
+                <img
+                  [src]="foto"
+                  [alt]="articulo.titulo">
+              </button>
+            }
+          </div>
+
+          <p class="contador-fotos">
+            {{ indiceFoto + 1 }} / {{ fotosPrenda.length }}
+          </p>
+        }
+      </div>
+
+      <h1 class="nombre-articulo">
+        {{ articulo.titulo }} · {{ marca }}
+      </h1>
+
+      <div class="columnas-detalle">
+
+        <section class="descripcion-producto">
+
+          <h2>Descripción del producto:</h2>
+
+          <p>
+            {{ articulo.descripcion || 'El anuncio no tiene una descripción detallada indicada' }}
+          </p>
+
+        </section>
+
+        <section class="otros-detalles">
+
+          <h2>
+            Duración del
+            {{ articulo.etiqueta === 'Préstamo'
+            ? 'préstamo'
+            : 'intercambio' }}:
+          </h2>
+
+          <p>
+            {{ articulo.duracion }}
+          </p>
+
+          <div class="especificaciones">
+
+            <p>
+              <strong>Talla:</strong>
+              {{ talla }}
+            </p>
+
+            <p>
+              <strong>Color:</strong>
+              {{ articulo.color || 'No indicado' }}
+            </p>
+
+            <p>
+              <strong>Estado del producto:</strong>
+              {{ articulo.estado || 'No indicado' }}
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <button
+        class="boton-intercambiar"
+        [routerLink]="['/tabs/solicitarprenda', articulo.id]">
+        Solicitar
+      </button>
+    </main>
+  }
+</ion-content>

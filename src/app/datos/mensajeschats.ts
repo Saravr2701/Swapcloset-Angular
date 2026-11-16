@@ -33,7 +33,7 @@ export const CHATS: Chat[] = [
   },
   {
     id: 2,
-    prenda: './assets/camisetabetis.png',
+    prenda: './assets/betis1.png',
     nombre: 'Manuel R.',
     prendaSolicitada: 'Camiseta betis',
     imagen: './assets/manuel.jpg',

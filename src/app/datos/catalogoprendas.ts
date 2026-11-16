@@ -4,15 +4,15 @@ export interface Prenda {
   titulo: string;
   subtitulo: string;
   etiqueta: 'Intercambio' | 'Préstamo'; //la tuberia indica que solo puede tomar uno de los dos valores establecidos
-  imagen: string;
+  imagen: string[];
   categorias: string[];
   descripcion: string;
-  talla: string;
 
   //la ? establece que el campo no es obligatorio
   duracion?: string;
   color?: string;
   estado?: string;
+  talla?: string;
 
   propietario: {
     nombre: string;
@@ -30,7 +30,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Pendientes bañados oro',
     subtitulo: 'Tous',
     etiqueta: 'Intercambio',
-    imagen: 'assets/pendientestous.png',
+    imagen: ['assets/pendientestous.png'],
     categorias: ['todo', 'accesorios'],
     descripcion: 'Pendientes Tous bañados en oro de 18k, con aproximadamente 10 usos, incluye ticket de compra y caja original.',
     duracion: 'Intercambio de hasta 12 días después de la recepción del producto.',
@@ -50,7 +50,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Conjunto top y short',
     subtitulo: 'Mango',
     etiqueta: 'Préstamo',
-    imagen: 'assets/conjunto.png',
+    imagen: ['assets/conjunto.png'],
     categorias: ['todo', 'casual'],
     descripcion: 'Conjunto comprado hace alrededor de 1 año, usado unas 10-15 veces, se entrega en su embalaje original.',
     duracion: 'Préstamos de hasta 2 semanas desde la recepción del producto.',
@@ -70,7 +70,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Zapatos running',
     subtitulo: 'Hooka',
     etiqueta: 'Intercambio',
-    imagen: 'assets/hooka.png',
+    imagen: ['assets/hooka.png'],
     categorias: ['todo', 'deportivo'],
     descripcion: 'Zapatillas de running muy cómodas y ligeras, ideales para correr o caminar largas distancias. Compradas hace aproximadamente 8 meses y utilizadas en unas 12 ocasiones. Se entregan limpias y con su caja original.',
     duracion: 'Intercambio de hasta 10 días después de la recepción del producto.',
@@ -90,7 +90,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Gabardina gris a cuadros',
     subtitulo: 'Stradivarius',
     etiqueta: 'Préstamo',
-    imagen: 'assets/gabardinagris.png',
+    imagen: ['assets/gabardinagris.png'],
     categorias: ['todo', 'formal'],
     descripcion: 'Gabardina de cuadros grises perfecta para entretiempo y ocasiones especiales. Comprada hace 2 años, utilizada en pocas ocasiones y conservada cuidadosamente. No presenta manchas ni desperfectos.',
     duracion: 'Préstamo de hasta 7 días desde la recepción del producto.',
@@ -110,7 +110,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Vaqueros skinny básicos',
     subtitulo: 'Levis',
     etiqueta: 'Intercambio',
-    imagen: 'assets/vaqueroslevis.png',
+    imagen: ['assets/levis1.png', 'assets/levis2.png', 'assets/levis3.png'],
     categorias: ['todo', 'casual'],
     descripcion: 'Pantalones vaqueros Levi’s de corte skinny y tiro medio. Muy versátiles para combinar con cualquier look. Comprados hace un año y medio y utilizados unas 20 veces. Se encuentran en perfecto estado de conservación.',
     duracion: 'Intercambio de hasta 14 días después de la recepción del producto.',
@@ -130,7 +130,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Pack de 4 tops multicolor',
     subtitulo: 'Shein',
     etiqueta: 'Préstamo',
-    imagen: 'assets/packtops.png',
+    imagen: ['assets/packtops.png'],
     categorias: ['todo', 'deportivo'],
     descripcion: 'Pack de cuatro tops ajustados de diferentes colores. Ideales para hacer deporte o crear conjuntos informales. Tejido elástico y cómodo. Comprados hace unos 6 meses, todos en muy buenas condiciones.',
     duracion: 'Préstamo de hasta 10 días desde la recepción de los productos.',
@@ -150,7 +150,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Chaleco formal',
     subtitulo: 'Zara',
     etiqueta: 'Intercambio',
-    imagen: 'assets/chalecozara.png',
+    imagen: ['assets/chalecozara.png'],
     categorias: ['todo', 'formal'],
     descripcion: 'Chaleco elegante de Zara, ideal para combinar con pantalones de vestir o faldas. Comprado para una ocasión especial y utilizado solamente tres veces. Tiene un corte entallado y se entrega recién lavado.',
     duracion: 'Intercambio de hasta 7 días después de la recepción del producto.',
@@ -170,7 +170,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Pantalones capri rotos',
     subtitulo: 'H&M',
     etiqueta: 'Intercambio',
-    imagen: 'assets/caprisrotos.png',
+    imagen: ['assets/caprisrotos.png'],
     categorias: ['todo', 'casual'],
     descripcion: 'Pantalones capri de H&M con detalles desgastados y rotos originales del diseño. Perfectos para primavera y verano. Comprados hace aproximadamente un año y utilizados unas 15 veces. Sin desperfectos adicionales.',
     duracion: 'Intercambio de hasta 12 días después de la recepción del producto.',
@@ -190,7 +190,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Conjunto sofisticado',
     subtitulo: 'Zara',
     etiqueta: 'Préstamo',
-    imagen: 'assets/conjuntosofisticado.png',
+    imagen: ['assets/conjuntosofisticado.png'],
     categorias: ['todo', 'formal'],
     descripcion: 'Conjunto elegante de dos piezas de Zara, ideal para cenas, reuniones y eventos especiales. Comprado hace aproximadamente 8 meses y utilizado en cuatro ocasiones. Se entrega limpio, planchado y en perfecto estado.',
     duracion: 'Préstamo de hasta 5 días desde la recepción del producto.',
@@ -210,7 +210,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Tacones Buganvilla',
     subtitulo: 'Maripaz',
     etiqueta: 'Préstamo',
-    imagen: 'assets/taconmaripaz.png',
+    imagen: ['assets/taconmaripaz.png'],
     categorias: ['todo', 'calzado'],
     descripcion: 'Tacones de fiesta de Maripaz en un llamativo tono buganvilla. Ideales para bodas, graduaciones y celebraciones. Comprados hace un año y utilizados solamente en tres eventos. Se entregan con su caja original.',
     duracion: 'Préstamo de hasta 4 días desde la recepción del producto.',
@@ -230,7 +230,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Campus Gris',
     subtitulo: 'Adidas',
     etiqueta: 'Préstamo',
-    imagen: 'assets/campus.png',
+    imagen: ['assets/campus.png'],
     categorias: ['todo', 'calzado'],
     descripcion: 'Zapatillas Adidas Campus de estilo urbano en color gris. Muy cómodas y fáciles de combinar con cualquier conjunto casual. Compradas hace unos 5 meses, utilizadas aproximadamente 10 veces y conservadas en muy buen estado.',
     duracion: 'Préstamo de hasta 7 días desde la recepción del producto.',
@@ -250,7 +250,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Converse Chunk Bota',
     subtitulo: 'Converse',
     etiqueta: 'Préstamo',
-    imagen: 'assets/conversebota.png',
+    imagen: ['assets/conversebota.png'],
     categorias: ['calzado'],
     descripcion: 'Zapatillas Converse de caña alta y plataforma gruesa, perfectas para looks urbanos. Compradas hace aproximadamente un año y utilizadas unas 15 veces. La suela y la tela están en buen estado, sin roturas.',
     duracion: 'Préstamo de hasta 10 días desde la recepción del producto.',
@@ -270,7 +270,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Airforce One Blancas',
     subtitulo: 'Nike',
     etiqueta: 'Intercambio',
-    imagen: 'assets/airforce.png',
+    imagen: ['assets/airforce.png'],
     categorias: ['calzado'],
     descripcion: 'Zapatillas Nike Air Force One blancas, un modelo clásico que combina con cualquier estilo. Compradas hace unos 7 meses y utilizadas aproximadamente 12 veces. Se entregan limpias, con cordones originales y caja.',
     duracion: 'Intercambio de hasta 14 días después de la recepción del producto.',
@@ -290,7 +290,7 @@ export const CATALOGO_PRENDAS: Prenda[] = [
     titulo: 'Jordan rojo y blanco',
     subtitulo: 'Nike',
     etiqueta: 'Intercambio',
-    imagen: 'assets/jordan.png',
+    imagen: ['assets/jordan.png'],
     categorias: ['calzado'],
     descripcion: 'Zapatillas Nike Jordan en combinación de rojo y blanco. Modelo deportivo de estilo urbano, ideal para looks casuales. Compradas hace aproximadamente un año y utilizadas unas 8 veces. Se conservan con su caja original.',
     duracion: 'Intercambio de hasta 10 días después de la recepción del producto.',
@@ -303,6 +303,26 @@ export const CATALOGO_PRENDAS: Prenda[] = [
       iniciales: 'DR',
       valoracion: 4.9,
       resenas: 44
+    }
+  },
+  {
+    id: 'betis',
+    titulo: 'Camiseta Betis',
+    subtitulo: 'Betis',
+    etiqueta: 'Préstamo',
+    imagen: ['assets/betis1.png', 'assets/betis2.png', 'assets/betis3.png'],
+    categorias: ['deportivo'],
+    descripcion: 'Camiseta oficial de la Segunda Equipación del Real Betis Balompié 26/27 para adulto. Diseñada bajo el lema "Verde Esperanza", combina distintas tonalidades de verde en una propuesta cargada de simbolismo que representa la identidad y el sentimiento',
+    duracion: 'Préstamo de 5 días después de la recepción del producto.',
+    talla: 'XXL',
+    color: 'Verde',
+    estado: 'Como nuevo (1-10 usos)',
+    propietario: {
+      nombre: 'Manuel R.',
+      ubicacion: 'Toledo, Toledo',
+      iniciales: 'MR',
+      valoracion: 4.1,
+      resenas: 9
     }
   }
 ];

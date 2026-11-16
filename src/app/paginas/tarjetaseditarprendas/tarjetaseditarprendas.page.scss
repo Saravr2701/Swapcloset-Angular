@@ -182,8 +182,8 @@
     font-size: 11px;
 
     &.no-disponible {
-      background-color: #f8e2e2;
-      color: #bd4545;
+      background-color: var(--ion-color-boton-rojo);
+      color: var(--ion-color-texto-boton-rojo);
     }
   }
 }

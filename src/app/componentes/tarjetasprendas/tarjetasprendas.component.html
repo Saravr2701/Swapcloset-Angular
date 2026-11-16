@@ -7,7 +7,7 @@
         (las tarjetas del menú de iniciotodo, inicioaccesorio, etc) -->
 
   <div class="foto">
-    <img [src]="prenda().imagen" [alt]="prenda().titulo">
+    <img [src]="prenda().imagen[0]" [alt]="prenda().titulo">
     <!-- mostramos la etiqueta de si es intercambio o préstamo obteniendola de la prenda -->
     <span class="intercambio">
       {{ prenda().etiqueta }}

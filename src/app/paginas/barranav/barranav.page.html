@@ -3,17 +3,21 @@
     <ion-tab-button
       tab="iniciotodo"
       [class.boton-atras]="router.url.startsWith('/tabs/detalleprenda') ||
-                            router.url.startsWith('/tabs/solicitarprenda') ">
+                            router.url.startsWith('/tabs/solicitarprenda') ||
+                            router.url.startsWith('/tabs/inicio') ||
+                            router.url.startsWith('/tabs/perfilusuarios')">
       <ion-icon
         [name]="router.url.startsWith('/tabs/detalleprenda') ||
-                router.url.startsWith('/tabs/solicitarprenda')
+                router.url.startsWith('/tabs/solicitarprenda') ||
+                router.url.startsWith('/tabs/perfilusuarios')
             ? 'arrow-back-outline'
             : 'home-outline'">
       </ion-icon>
       <ion-label>
         {{
           router.url.startsWith('/tabs/detalleprenda') ||
-          router.url.startsWith('/tabs/solicitarprenda')
+          router.url.startsWith('/tabs/solicitarprenda') ||
+          router.url.startsWith('/tabs/perfilusuarios')
             ? 'Atrás'
             : 'Inicio'
         }}
