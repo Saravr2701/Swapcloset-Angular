@@ -1,26 +1,29 @@
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import {IonContent, IonHeader, IonToolbar} from '@ionic/angular';
+import {IonContent, IonHeader, IonToolbar, IonModal, IonIcon} from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 
 import { MIS_PRENDAS, MiPrenda } from '../../datos/misprendas';
+import { addIcons } from 'ionicons';
+import { checkmarkCircleOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tarjetaseditarprendas',
   templateUrl: './tarjetaseditarprendas.page.html',
   styleUrls: ['./tarjetaseditarprendas.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonContent, IonHeader, IonToolbar, RouterLink]
-})
+  imports: [CommonModule, FormsModule, IonContent, IonHeader, IonToolbar, RouterLink, IonModal, IonIcon]})
 export class TarjetaseditarprendasPage implements OnInit {
 
   prenda?: MiPrenda;
   tipoSeleccionado: 'Intercambio' | 'Préstamo' = 'Intercambio';
+  modalBorradoAbierto = false;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) {
+    addIcons({ checkmarkCircleOutline });
+  }
 
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -56,4 +59,20 @@ export class TarjetaseditarprendasPage implements OnInit {
     this.router.navigate(['/tabs/perfil']);
   }
 
+  borrarPrenda() {
+    if (!this.prenda) return;
+    const id = this.prenda.id;
+    const indice = MIS_PRENDAS.findIndex(
+      articulo => articulo.id === id
+    );
+
+    if (indice === -1) return;
+    MIS_PRENDAS.splice(indice, 1);
+    this.modalBorradoAbierto = true;
+  }
+
+  cerrarModalBorrado() {
+    this.modalBorradoAbierto = false;
+    this.router.navigate(['/tabs/perfil']);
+  }
 }

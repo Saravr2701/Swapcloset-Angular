@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login', // Al entrar a la app, va al Login
+    redirectTo: 'login', // Al entrar a la app va al Login
     pathMatch: 'full',
   },
   {
@@ -110,5 +110,14 @@ export const routes: Routes = [
   {
     path: 'pantallaexito',
     loadComponent: () => import('./paginas/pantallaexito/pantallaexito.page').then( m => m.PantallaexitoPage)
+  },
+  {
+    path: 'rutaerronea',
+    loadComponent: () => import('./paginas/rutaerronea/rutaerronea.page').then( m => m.RutaerroneaPage)
+  },
+  {
+    path: '**',
+    redirectTo: 'rutaerronea', // Al introducir una ruta erronea va a la pagina de error
+    pathMatch: 'full',
   },
 ];

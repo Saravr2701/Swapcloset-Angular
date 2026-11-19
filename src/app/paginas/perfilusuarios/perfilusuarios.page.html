@@ -28,11 +28,13 @@
             ({{ perfil.resenas }} reseñas)
           </span>
         </div>
+        <button type="button" class="boton-escribir-resena" (click)="abrirModalResena()">
+        <ion-icon name="star-outline"></ion-icon>
+        Escribir reseña
+      </button>
       </div>
       <div class="detalles-perfil">
-
         <div class="estilos">
-
           <h3>Estilos favoritos</h3>
           <div class="lista-estilos">
             @for (estilo of perfil.estilosfavoritos; track estilo) {
@@ -82,3 +84,63 @@
     </div>
   }
 </ion-content>
+
+<ion-modal class="modal-resena" [isOpen]="modalResenaAbierto" (didDismiss)="cerrarModalResena()">
+  <ng-template>
+    <div class="contenido-modal-resena">
+      @if (!resenaPublicada) {
+        <h2>Escribir reseña</h2>
+        <p>
+          ¿Cómo ha sido tu experiencia con
+          {{ datosPerfil?.nombre }}?
+        </p>
+
+        <div class="estrellas-resena">
+          @for (numero of [1, 2, 3, 4, 5]; track numero) {
+            <button
+              type="button"
+              [attr.aria-label]="'Seleccionar ' + numero + ' estrellas'"
+              (click)="estrellasSeleccionadas = numero">
+
+              <ion-icon
+                [name]="numero <= estrellasSeleccionadas
+                  ? 'star'
+                  : 'star-outline'">
+              </ion-icon>
+            </button>
+          }
+        </div>
+
+        <textarea
+          rows="4"
+          placeholder="Escribe aquí tu experiencia..."
+          [(ngModel)]="comentarioResena">
+        </textarea>
+
+        <div class="botones-resena">
+          <button
+            type="button"
+            class="boton-cancelar-resena"
+            (click)="cerrarModalResena()">
+            Cancelar
+          </button>
+
+          <button type="button" class="boton-publicar-resena" [disabled]="estrellasSeleccionadas === 0 || !comentarioResena.trim()" (click)="publicarResena()">
+            Publicar reseña
+          </button>
+        </div>
+      } @else {
+        <ion-icon name="checkmark-circle-outline" class="icono-exito">
+        </ion-icon>
+        <h2>¡Reseña publicada!</h2>
+        <p>
+          Tu reseña se ha publicado correctamente.
+        </p>
+
+        <button type="button" class="boton-aceptar-resena" (click)="cerrarModalResena()">
+          Aceptar
+        </button>
+      }
+    </div>
+  </ng-template>
+</ion-modal>

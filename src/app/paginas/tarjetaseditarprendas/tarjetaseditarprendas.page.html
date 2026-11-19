@@ -104,6 +104,34 @@
           Guardar cambios
         </button>
       </div>
+
+      <button type="button" class="boton-borrar" (click)="borrarPrenda()">
+        Borrar prenda
+      </button>
+
+      <ion-modal [isOpen]="modalBorradoAbierto" [backdropDismiss]="false" (didDismiss)="cerrarModalBorrado()" class="modal-borrado">
+        <ng-template>
+          <div class="contenido-modal-borrado">
+
+            <ion-icon
+              name="checkmark-circle-outline"
+              class="icono-confirmacion">
+            </ion-icon>
+
+            <h2>¡Prenda borrada!</h2>
+            <p>
+              Tu prenda se ha eliminado correctamente.
+            </p>
+
+            <button
+              type="button"
+              class="boton-volver"
+              (click)="modalBorradoAbierto = false">
+              Volver a mis prendas
+            </button>
+          </div>
+        </ng-template>
+      </ion-modal>
     </div>
   }
 </ion-content>

@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 import {IonContent, IonHeader, IonToolbar, IonButton, IonToggle, ToggleCustomEvent, IonIcon, IonItem, IonList, IonLabel} from '@ionic/angular';
 
 import { addIcons } from 'ionicons';
-import { moonOutline, imagesOutline, informationCircleOutline, notificationsOutline } from 'ionicons/icons';
+import { moonOutline, imagesOutline, informationCircleOutline, notificationsOutline, newspaperOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-ajustes',
@@ -18,7 +18,7 @@ export class AjustesPage {
   oscuro = document.documentElement.classList.contains('ion-palette-dark');
 
   constructor() {
-    addIcons({ moonOutline, informationCircleOutline, imagesOutline, notificationsOutline });
+    addIcons({ moonOutline, informationCircleOutline, imagesOutline, notificationsOutline, newspaperOutline });
   }
 
   cambiarTema(evento: ToggleCustomEvent) {
